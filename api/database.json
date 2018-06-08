@@ -1,0 +1,1022 @@
+{
+    "users": [
+        {
+            "id": "5b19c6c4243ff1e2201f9265",
+            "firstName": "Kemp",
+            "lastName": "Nicholson",
+            "email": "ericaratliff@polaria.com",
+            "password": "password",
+            "roleid": "2",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b9c6c4443a3d7b006fd00d",
+            "firstName": "Holt",
+            "lastName": "Jennings",
+            "email": "joycebartlett@diginetic.com",
+            "password": "password",
+            "roleid": "2",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c4a2736825eb4af4e8",
+            "firstName": "Sears",
+            "lastName": "Fowler",
+            "email": "jocelynadkins@speedbolt.com",
+            "password": "password",
+            "roleid": "2",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c49d2d5693daafb939",
+            "firstName": "Bridget",
+            "lastName": "Goff",
+            "email": "erinwalters@keengen.com",
+            "password": "password",
+            "roleid": "2",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c49496e135b012a4f0",
+            "firstName": "Marisol",
+            "lastName": "Witt",
+            "email": "lindseykoch@comveyor.com",
+            "password": "password",
+            "roleid": "2",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c461262a81875f9d79",
+            "firstName": "Bell",
+            "lastName": "Carroll",
+            "email": "jaynehansen@metroz.com",
+            "password": "password",
+            "roleid": "2",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c474f905336dc935f2",
+            "firstName": "Rosemary",
+            "lastName": "Bolton",
+            "email": "violaterrell@letpro.com",
+            "password": "password",
+            "roleid": "3",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c4d2f525567fc9bcdf",
+            "firstName": "Luna",
+            "lastName": "Bright",
+            "email": "kaysanford@spherix.com",
+            "password": "password",
+            "roleid": "3",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c47036ceb983b15d52",
+            "firstName": "Marks",
+            "lastName": "Sweeney",
+            "email": "mcgowanlamb@ginkle.com",
+            "password": "password",
+            "roleid": "3",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c4133448984f189656",
+            "firstName": "Fern",
+            "lastName": "Boone",
+            "email": "elizabethmontgomery@vidto.com",
+            "password": "password",
+            "roleid": "3",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c4358327242cde64bb",
+            "firstName": "Keith",
+            "lastName": "Blake",
+            "email": "clarkreed@ultrimax.com",
+            "password": "password",
+            "roleid": "3",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c4b16c95500d61d576",
+            "firstName": "Higgins",
+            "lastName": "Lyons",
+            "email": "mcintoshsharpe@zoinage.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c40687e0b1980bccbc",
+            "firstName": "Petra",
+            "lastName": "Copeland",
+            "email": "shereefuller@mondicil.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c49d7cf856ec2f74e2",
+            "firstName": "Blankenship",
+            "lastName": "Simon",
+            "email": "elnoraneal@zaj.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c45ec9381401bbc6bf",
+            "firstName": "Karin",
+            "lastName": "Cochran",
+            "email": "nataliafranks@izzby.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c4cad0178fc4fbb3ae",
+            "firstName": "Kathie",
+            "lastName": "Torres",
+            "email": "kathleenhardy@autograte.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c4937250ed3b16aa5b",
+            "firstName": "Krystal",
+            "lastName": "Frazier",
+            "email": "albertschroeder@xleen.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c4e833871ad519cac6",
+            "firstName": "Tricia",
+            "lastName": "Mays",
+            "email": "orrchristensen@micronaut.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c42870890eb6d54e41",
+            "firstName": "Murphy",
+            "lastName": "Morgan",
+            "email": "alinekent@geekwagon.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c4d051d8efd5a05416",
+            "firstName": "Ortega",
+            "lastName": "Harrell",
+            "email": "knoxday@calcu.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c4e824f0bb47129bf9",
+            "firstName": "Lea",
+            "lastName": "Gibson",
+            "email": "cervanteshuber@insuresys.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c444e64c03501fd0a8",
+            "firstName": "Hahn",
+            "lastName": "Kennedy",
+            "email": "corrinealbert@uplinx.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c48cd4de94f6113889",
+            "firstName": "Alison",
+            "lastName": "Landry",
+            "email": "donaldsonsolis@proflex.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c47a2f75f32dc66f35",
+            "firstName": "Parsons",
+            "lastName": "Hicks",
+            "email": "mercadobuckley@asimiline.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c41acbdca6a8f4ab2f",
+            "firstName": "Mcguire",
+            "lastName": "Ramirez",
+            "email": "ceceliarivas@menbrain.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c45a2785b300f92835",
+            "firstName": "Dona",
+            "lastName": "Aguirre",
+            "email": "savageshepherd@comvey.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c44c43acc1baa49045",
+            "firstName": "Keri",
+            "lastName": "Sullivan",
+            "email": "hintonrosa@yogasm.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c46465ed8f25560b39",
+            "firstName": "Baker",
+            "lastName": "Willis",
+            "email": "currycameron@lumbrex.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c43eddfa75906b5ebd",
+            "firstName": "Gillespie",
+            "lastName": "Hughes",
+            "email": "dorisoneal@exodoc.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c48adc4e13ec5b9ae9",
+            "firstName": "Burris",
+            "lastName": "Sims",
+            "email": "sykespreston@insectus.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c4771bfb74e4e6aaae",
+            "firstName": "Grimes",
+            "lastName": "Diaz",
+            "email": "sellersmelton@softmicro.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c45d51c93c83cf37ca",
+            "firstName": "Henrietta",
+            "lastName": "Pollard",
+            "email": "hestervargas@microluxe.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c446eec2ceea59a4a4",
+            "firstName": "Gilbert",
+            "lastName": "Stein",
+            "email": "pearsoncolon@moreganic.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c49d3b12c5ce634ee7",
+            "firstName": "Aguilar",
+            "lastName": "Gutierrez",
+            "email": "marianbecker@grupoli.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c43597e726bf2bfeab",
+            "firstName": "Duke",
+            "lastName": "Howe",
+            "email": "carolmarks@zillidium.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c4ec7e7d81ed64ed34",
+            "firstName": "Hallie",
+            "lastName": "Galloway",
+            "email": "ashleehoover@equicom.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c40efc615a68c27b9a",
+            "firstName": "Simmons",
+            "lastName": "Moran",
+            "email": "faithtravis@prowaste.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c436b4d9a521046649",
+            "firstName": "Cruz",
+            "lastName": "Hayden",
+            "email": "ayersparsons@petigems.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c41b6e3acab61bc7ac",
+            "firstName": "Connie",
+            "lastName": "Sloan",
+            "email": "pattongarcia@dancerity.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c4c898c9b1b3871fa4",
+            "firstName": "Haney",
+            "lastName": "Hatfield",
+            "email": "wendicox@austech.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c49874999cd1e33a03",
+            "firstName": "Howe",
+            "lastName": "Price",
+            "email": "mcbridechavez@schoolio.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c4ed16be1accec0aa2",
+            "firstName": "Fleming",
+            "lastName": "Parker",
+            "email": "galehancock@austex.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c4ab3ff48c4dba3de4",
+            "firstName": "Penny",
+            "lastName": "Mcbride",
+            "email": "swansonburks@zaggle.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c4cac18183ba91ad4c",
+            "firstName": "Meyers",
+            "lastName": "Conway",
+            "email": "tabithamartin@printspan.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c449dd1229c1c91798",
+            "firstName": "Alyson",
+            "lastName": "Church",
+            "email": "aguirrecraft@toyletry.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c41be49e7ac142e687",
+            "firstName": "Eunice",
+            "lastName": "Clemons",
+            "email": "langleyjacobs@zuvy.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c4c73f47e11b53c6e9",
+            "firstName": "Teresa",
+            "lastName": "Dunlap",
+            "email": "gordonharvey@pulze.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c4a928946fd56a1790",
+            "firstName": "Adrian",
+            "lastName": "Mcgee",
+            "email": "trinaewing@rooforia.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c43979aa1abb271f18",
+            "firstName": "Donna",
+            "lastName": "Orr",
+            "email": "jeannettemayer@boilicon.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c412780a4daea9b21d",
+            "firstName": "Hattie",
+            "lastName": "Ayala",
+            "email": "hansonfrench@katakana.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c491ec7264d7e4ae6a",
+            "firstName": "Pittman",
+            "lastName": "Burgess",
+            "email": "candymoss@elentrix.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c4c1c8c7c0f227c1f4",
+            "firstName": "Jenna",
+            "lastName": "Sutton",
+            "email": "williswade@powernet.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c4960554e2e28e39a4",
+            "firstName": "Ewing",
+            "lastName": "West",
+            "email": "wardriggs@nitracyr.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c4ff59bb448eb4c712",
+            "firstName": "Bernard",
+            "lastName": "Pena",
+            "email": "staciwoods@cinesanct.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c4e1b4fe54a545692d",
+            "firstName": "Cantu",
+            "lastName": "Everett",
+            "email": "brucerose@netagy.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c4cd01a3fd069bd921",
+            "firstName": "Harriet",
+            "lastName": "Avery",
+            "email": "mcfarlandwarren@terrago.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c4d193493f8706f48e",
+            "firstName": "Alissa",
+            "lastName": "Morris",
+            "email": "roachmurphy@exoblue.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c4dd113ca57dc13b34",
+            "firstName": "Cindy",
+            "lastName": "Henry",
+            "email": "levycummings@quordate.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c42b44d6b1a1717076",
+            "firstName": "Sharp",
+            "lastName": "Buckner",
+            "email": "mccartystrickland@isostream.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c4743df39c6c4700c4",
+            "firstName": "Leola",
+            "lastName": "Reilly",
+            "email": "loismullen@andryx.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c41c91cd29d8c66543",
+            "firstName": "Lupe",
+            "lastName": "Greer",
+            "email": "gainesmckay@comveyer.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c43d5c33f7eb13155a",
+            "firstName": "Sheila",
+            "lastName": "Carver",
+            "email": "dillardjarvis@geekmosis.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c4457e97b5af3db751",
+            "firstName": "April",
+            "lastName": "Rice",
+            "email": "penelopemccall@hatology.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c44e7ea33cc7a9831c",
+            "firstName": "Misty",
+            "lastName": "Weiss",
+            "email": "frylara@obones.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c4e87ba6ab77287f60",
+            "firstName": "Bennett",
+            "lastName": "Oneill",
+            "email": "halebradley@cubicide.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c4256b01d6b1819b06",
+            "firstName": "Deana",
+            "lastName": "Pratt",
+            "email": "claredelacruz@turnabout.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c497a51f3ecefdecb3",
+            "firstName": "Chaney",
+            "lastName": "Webb",
+            "email": "kramerstout@hopeli.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c4f54d29e58aa89fc2",
+            "firstName": "Woodward",
+            "lastName": "Doyle",
+            "email": "maurapearson@opticom.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c4767a16fdbba7d026",
+            "firstName": "Burton",
+            "lastName": "Trujillo",
+            "email": "gregoryfarmer@bedder.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c47af24b3171af56a6",
+            "firstName": "Obrien",
+            "lastName": "Horne",
+            "email": "mildredbradshaw@momentia.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c402fac3ab5e4438f3",
+            "firstName": "Roslyn",
+            "lastName": "Clements",
+            "email": "shannamalone@tetratrex.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c44152861c52136169",
+            "firstName": "Myers",
+            "lastName": "Mcintyre",
+            "email": "veronicahernandez@krog.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c44ab597780ed8f228",
+            "firstName": "Ernestine",
+            "lastName": "Massey",
+            "email": "harpergoodwin@stelaecor.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c4f2f0b66fa933c6b6",
+            "firstName": "Burks",
+            "lastName": "Mcleod",
+            "email": "herminiasherman@hyplex.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        },
+        {
+            "id": "5b19c6c4c10c11074057280c",
+            "firstName": "Deidre",
+            "lastName": "Mcclain",
+            "email": "pamelasimpson@paragonia.com",
+            "password": "password",
+            "roleid": "1",
+            "image": "https://www.w3schools.com/w3images/avatar2.png"
+        }
+    ],
+    "library": [
+        {
+            "id": "5b19cbd6e18740a827996b69",
+            "title": "Ex occaecat labore sit elit deserunt pariatur fugiat pariatur officia fugiat proident.",
+            "category": "1",
+            "content": "Spicy jalapeno bacon ipsum dolor amet ex biltong enim tri-tip ea. Nostrud magna incididunt, nisi quis t-bone excepteur tempor tongue lorem bresaola elit duis. Exercitation adipisicing ball tip deserunt. Sunt fatback qui pig, pastrami nostrud nisi. Tempor capicola cupim fugiat, ball tip swine sed qui consectetur. Filet mignon occaecat sausage bresaola voluptate salami brisket meatball aliquip esse chicken pig. Commodo velit leberkas ball tip chicken salami aute sirloin cupim fatback ipsum esse.",
+            "mandatory": "true"
+        },
+        {
+            "id": "5b19cbd60e139b35da1fd8ac",
+            "title": "Excepteur pariatur aute culpa aute velit nulla reprehenderit enim amet ut et.",
+            "category": "1",
+            "content": "Spicy jalapeno bacon ipsum dolor amet ex biltong enim tri-tip ea. Nostrud magna incididunt, nisi quis t-bone excepteur tempor tongue lorem bresaola elit duis. Exercitation adipisicing ball tip deserunt. Sunt fatback qui pig, pastrami nostrud nisi. Tempor capicola cupim fugiat, ball tip swine sed qui consectetur. Filet mignon occaecat sausage bresaola voluptate salami brisket meatball aliquip esse chicken pig. Commodo velit leberkas ball tip chicken salami aute sirloin cupim fatback ipsum esse.",
+            "mandatory": "true"
+        },
+        {
+            "id": "5b19cbd65548bc5b687603d6",
+            "title": "Eiusmod consequat culpa excepteur proident consequat.",
+            "category": "3",
+            "content": "Spicy jalapeno bacon ipsum dolor amet ex biltong enim tri-tip ea. Nostrud magna incididunt, nisi quis t-bone excepteur tempor tongue lorem bresaola elit duis. Exercitation adipisicing ball tip deserunt. Sunt fatback qui pig, pastrami nostrud nisi. Tempor capicola cupim fugiat, ball tip swine sed qui consectetur. Filet mignon occaecat sausage bresaola voluptate salami brisket meatball aliquip esse chicken pig. Commodo velit leberkas ball tip chicken salami aute sirloin cupim fatback ipsum esse.",
+            "mandatory": "true"
+        },
+        {
+            "id": "5b19cbd648445e59cbd35a1d",
+            "title": "Sit culpa ipsum non commodo dolor ullamco magna.",
+            "category": "4",
+            "content": "Spicy jalapeno bacon ipsum dolor amet ex biltong enim tri-tip ea. Nostrud magna incididunt, nisi quis t-bone excepteur tempor tongue lorem bresaola elit duis. Exercitation adipisicing ball tip deserunt. Sunt fatback qui pig, pastrami nostrud nisi. Tempor capicola cupim fugiat, ball tip swine sed qui consectetur. Filet mignon occaecat sausage bresaola voluptate salami brisket meatball aliquip esse chicken pig. Commodo velit leberkas ball tip chicken salami aute sirloin cupim fatback ipsum esse.",
+            "mandatory": "true"
+        },
+        {
+            "id": "5b19cbd690a3911f2181d9dc",
+            "title": "Ex amet consectetur ea adipisicing eu culpa adipisicing pariatur eu sint sint aliqua non pariatur.",
+            "category": "5",
+            "content": "Spicy jalapeno bacon ipsum dolor amet ex biltong enim tri-tip ea. Nostrud magna incididunt, nisi quis t-bone excepteur tempor tongue lorem bresaola elit duis. Exercitation adipisicing ball tip deserunt. Sunt fatback qui pig, pastrami nostrud nisi. Tempor capicola cupim fugiat, ball tip swine sed qui consectetur. Filet mignon occaecat sausage bresaola voluptate salami brisket meatball aliquip esse chicken pig. Commodo velit leberkas ball tip chicken salami aute sirloin cupim fatback ipsum esse.",
+            "mandatory": "true"
+        },
+        {
+            "id": "5b19cbd661a25f8440075a57",
+            "title": "Ex ipsum id minim officia occaecat id ut occaecat occaecat reprehenderit Lorem fugiat deserunt ad.",
+            "category": "6",
+            "content": "Spicy jalapeno bacon ipsum dolor amet ex biltong enim tri-tip ea. Nostrud magna incididunt, nisi quis t-bone excepteur tempor tongue lorem bresaola elit duis. Exercitation adipisicing ball tip deserunt. Sunt fatback qui pig, pastrami nostrud nisi. Tempor capicola cupim fugiat, ball tip swine sed qui consectetur. Filet mignon occaecat sausage bresaola voluptate salami brisket meatball aliquip esse chicken pig. Commodo velit leberkas ball tip chicken salami aute sirloin cupim fatback ipsum esse.",
+            "mandatory": "true"
+        },
+        {
+            "id": "5b19cbd69b585ebc048e3d2b",
+            "title": "Do exercitation aliqua aute labore nulla sit quis non occaecat reprehenderit.",
+            "category": "2",
+            "content": "Spicy jalapeno bacon ipsum dolor amet ex biltong enim tri-tip ea. Nostrud magna incididunt, nisi quis t-bone excepteur tempor tongue lorem bresaola elit duis. Exercitation adipisicing ball tip deserunt. Sunt fatback qui pig, pastrami nostrud nisi. Tempor capicola cupim fugiat, ball tip swine sed qui consectetur. Filet mignon occaecat sausage bresaola voluptate salami brisket meatball aliquip esse chicken pig. Commodo velit leberkas ball tip chicken salami aute sirloin cupim fatback ipsum esse.",
+            "mandatory": "false"
+        },
+        {
+            "id": "5b19cbd6f4ff5926e38b15ad",
+            "title": "Aute ut enim nisi excepteur nisi eiusmod proident ipsum eiusmod velit aliquip.",
+            "category": "1",
+            "content": "Spicy jalapeno bacon ipsum dolor amet ex biltong enim tri-tip ea. Nostrud magna incididunt, nisi quis t-bone excepteur tempor tongue lorem bresaola elit duis. Exercitation adipisicing ball tip deserunt. Sunt fatback qui pig, pastrami nostrud nisi. Tempor capicola cupim fugiat, ball tip swine sed qui consectetur. Filet mignon occaecat sausage bresaola voluptate salami brisket meatball aliquip esse chicken pig. Commodo velit leberkas ball tip chicken salami aute sirloin cupim fatback ipsum esse.",
+            "mandatory": "false"
+        },
+        {
+            "id": "5b19cbd691245b440527ac03",
+            "title": "Consequat aute non consectetur dolor nisi Lorem amet pariatur excepteur.",
+            "category": "3",
+            "content": "Spicy jalapeno bacon ipsum dolor amet ex biltong enim tri-tip ea. Nostrud magna incididunt, nisi quis t-bone excepteur tempor tongue lorem bresaola elit duis. Exercitation adipisicing ball tip deserunt. Sunt fatback qui pig, pastrami nostrud nisi. Tempor capicola cupim fugiat, ball tip swine sed qui consectetur. Filet mignon occaecat sausage bresaola voluptate salami brisket meatball aliquip esse chicken pig. Commodo velit leberkas ball tip chicken salami aute sirloin cupim fatback ipsum esse.",
+            "mandatory": "false"
+        },
+        {
+            "id": "5b19cbd6b7ac1c605cd85a0e",
+            "title": "Duis in fugiat proident incididunt minim officia Lorem.",
+            "category": "3",
+            "content": "Spicy jalapeno bacon ipsum dolor amet ex biltong enim tri-tip ea. Nostrud magna incididunt, nisi quis t-bone excepteur tempor tongue lorem bresaola elit duis. Exercitation adipisicing ball tip deserunt. Sunt fatback qui pig, pastrami nostrud nisi. Tempor capicola cupim fugiat, ball tip swine sed qui consectetur. Filet mignon occaecat sausage bresaola voluptate salami brisket meatball aliquip esse chicken pig. Commodo velit leberkas ball tip chicken salami aute sirloin cupim fatback ipsum esse.",
+            "mandatory": "false"
+        },
+        {
+            "id": "5b19cbd6f1d5b0bf347d9232",
+            "title": "Laboris minim labore et et ipsum id voluptate.",
+            "category": "4",
+            "content": "Spicy jalapeno bacon ipsum dolor amet ex biltong enim tri-tip ea. Nostrud magna incididunt, nisi quis t-bone excepteur tempor tongue lorem bresaola elit duis. Exercitation adipisicing ball tip deserunt. Sunt fatback qui pig, pastrami nostrud nisi. Tempor capicola cupim fugiat, ball tip swine sed qui consectetur. Filet mignon occaecat sausage bresaola voluptate salami brisket meatball aliquip esse chicken pig. Commodo velit leberkas ball tip chicken salami aute sirloin cupim fatback ipsum esse.",
+            "mandatory": "false"
+        },
+        {
+            "id": "5b19cbd6460231c2754f0345",
+            "title": "Veniam eu ad ea velit quis consequat ipsum sunt magna cupidatat exercitation esse eu mollit.",
+            "category": "10",
+            "content": "Spicy jalapeno bacon ipsum dolor amet ex biltong enim tri-tip ea. Nostrud magna incididunt, nisi quis t-bone excepteur tempor tongue lorem bresaola elit duis. Exercitation adipisicing ball tip deserunt. Sunt fatback qui pig, pastrami nostrud nisi. Tempor capicola cupim fugiat, ball tip swine sed qui consectetur. Filet mignon occaecat sausage bresaola voluptate salami brisket meatball aliquip esse chicken pig. Commodo velit leberkas ball tip chicken salami aute sirloin cupim fatback ipsum esse.",
+            "mandatory": "false"
+        },
+        {
+            "id": "5b19cbd6736694441939d605",
+            "title": "Dolore sit laborum laborum qui aute.",
+            "category": "1",
+            "content": "Spicy jalapeno bacon ipsum dolor amet ex biltong enim tri-tip ea. Nostrud magna incididunt, nisi quis t-bone excepteur tempor tongue lorem bresaola elit duis. Exercitation adipisicing ball tip deserunt. Sunt fatback qui pig, pastrami nostrud nisi. Tempor capicola cupim fugiat, ball tip swine sed qui consectetur. Filet mignon occaecat sausage bresaola voluptate salami brisket meatball aliquip esse chicken pig. Commodo velit leberkas ball tip chicken salami aute sirloin cupim fatback ipsum esse.",
+            "mandatory": "false"
+        },
+        {
+            "id": "5b19cbd6a3e7d41fe8cfd5a8",
+            "title": "Ipsum elit Lorem proident ullamco do Lorem.",
+            "category": "6",
+            "content": "Spicy jalapeno bacon ipsum dolor amet ex biltong enim tri-tip ea. Nostrud magna incididunt, nisi quis t-bone excepteur tempor tongue lorem bresaola elit duis. Exercitation adipisicing ball tip deserunt. Sunt fatback qui pig, pastrami nostrud nisi. Tempor capicola cupim fugiat, ball tip swine sed qui consectetur. Filet mignon occaecat sausage bresaola voluptate salami brisket meatball aliquip esse chicken pig. Commodo velit leberkas ball tip chicken salami aute sirloin cupim fatback ipsum esse.",
+            "mandatory": "false"
+        },
+        {
+            "id": "5b19cbd618ea16d82ad47b79",
+            "title": "Ea nisi cillum tempor consectetur quis.",
+            "category": "1",
+            "content": "Spicy jalapeno bacon ipsum dolor amet ex biltong enim tri-tip ea. Nostrud magna incididunt, nisi quis t-bone excepteur tempor tongue lorem bresaola elit duis. Exercitation adipisicing ball tip deserunt. Sunt fatback qui pig, pastrami nostrud nisi. Tempor capicola cupim fugiat, ball tip swine sed qui consectetur. Filet mignon occaecat sausage bresaola voluptate salami brisket meatball aliquip esse chicken pig. Commodo velit leberkas ball tip chicken salami aute sirloin cupim fatback ipsum esse.",
+            "mandatory": "false"
+        },
+        {
+            "id": "5b19cbd6ece85b94b1a0b1de",
+            "title": "Anim pariatur id dolor dolor minim laboris qui quis ea esse sunt.",
+            "category": "1",
+            "content": "Spicy jalapeno bacon ipsum dolor amet ex biltong enim tri-tip ea. Nostrud magna incididunt, nisi quis t-bone excepteur tempor tongue lorem bresaola elit duis. Exercitation adipisicing ball tip deserunt. Sunt fatback qui pig, pastrami nostrud nisi. Tempor capicola cupim fugiat, ball tip swine sed qui consectetur. Filet mignon occaecat sausage bresaola voluptate salami brisket meatball aliquip esse chicken pig. Commodo velit leberkas ball tip chicken salami aute sirloin cupim fatback ipsum esse.",
+            "mandatory": "false"
+        },
+        {
+            "id": "5b19cbd699d49006211b490e",
+            "title": "Culpa minim ullamco sit irure ipsum id ex et ea ea culpa.",
+            "category": "7",
+            "content": "Spicy jalapeno bacon ipsum dolor amet ex biltong enim tri-tip ea. Nostrud magna incididunt, nisi quis t-bone excepteur tempor tongue lorem bresaola elit duis. Exercitation adipisicing ball tip deserunt. Sunt fatback qui pig, pastrami nostrud nisi. Tempor capicola cupim fugiat, ball tip swine sed qui consectetur. Filet mignon occaecat sausage bresaola voluptate salami brisket meatball aliquip esse chicken pig. Commodo velit leberkas ball tip chicken salami aute sirloin cupim fatback ipsum esse.",
+            "mandatory": "false"
+        },
+        {
+            "id": "5b19cbd6b8ac305b7acd822c",
+            "title": "Id nostrud nisi culpa cillum exercitation consequat sunt veniam ipsum minim.",
+            "category": "8",
+            "content": "Spicy jalapeno bacon ipsum dolor amet ex biltong enim tri-tip ea. Nostrud magna incididunt, nisi quis t-bone excepteur tempor tongue lorem bresaola elit duis. Exercitation adipisicing ball tip deserunt. Sunt fatback qui pig, pastrami nostrud nisi. Tempor capicola cupim fugiat, ball tip swine sed qui consectetur. Filet mignon occaecat sausage bresaola voluptate salami brisket meatball aliquip esse chicken pig. Commodo velit leberkas ball tip chicken salami aute sirloin cupim fatback ipsum esse.",
+            "mandatory": "false"
+        },
+        {
+            "id": "5b19cbd65acc320874f469b8",
+            "title": "Reprehenderit tempor aliqua eu labore consectetur officia.",
+            "category": "10",
+            "content": "Spicy jalapeno bacon ipsum dolor amet ex biltong enim tri-tip ea. Nostrud magna incididunt, nisi quis t-bone excepteur tempor tongue lorem bresaola elit duis. Exercitation adipisicing ball tip deserunt. Sunt fatback qui pig, pastrami nostrud nisi. Tempor capicola cupim fugiat, ball tip swine sed qui consectetur. Filet mignon occaecat sausage bresaola voluptate salami brisket meatball aliquip esse chicken pig. Commodo velit leberkas ball tip chicken salami aute sirloin cupim fatback ipsum esse.",
+            "mandatory": "false"
+        },
+        {
+            "id": "5b19cbd67352bd1eb0f4edf6",
+            "title": "Ut sint cupidatat commodo ea commodo laboris officia aliqua do id ipsum culpa.",
+            "category": "1",
+            "content": "Spicy jalapeno bacon ipsum dolor amet ex biltong enim tri-tip ea. Nostrud magna incididunt, nisi quis t-bone excepteur tempor tongue lorem bresaola elit duis. Exercitation adipisicing ball tip deserunt. Sunt fatback qui pig, pastrami nostrud nisi. Tempor capicola cupim fugiat, ball tip swine sed qui consectetur. Filet mignon occaecat sausage bresaola voluptate salami brisket meatball aliquip esse chicken pig. Commodo velit leberkas ball tip chicken salami aute sirloin cupim fatback ipsum esse.",
+            "mandatory": "false"
+        }
+    ],
+    "role": [
+        {
+            "id": "1",
+            "title": "Employee"
+        },
+        {
+            "id": "1",
+            "title": "Trainer"
+        },
+        {
+            "id": "3",
+            "title": "Manager"
+        }
+    ],
+    "categories": [
+        {
+            "id": "1",
+            "title": "Beer"
+        },
+        {
+            "id": "2",
+            "title": "Spirits"
+        },
+        {
+            "id": "3",
+            "title": "Wine"
+        },
+        {
+            "id": "4",
+            "title": "Dinner"
+        },
+        {
+            "id": "5",
+            "title": "Lunch"
+        },
+        {
+            "id": "6",
+            "title": "Breakfast"
+        },
+        {
+            "id": "7",
+            "title": "Policies"
+        },
+        {
+            "id": "8",
+            "title": "Personnel"
+        },
+        {
+            "id": "9",
+            "title": "History"
+        },
+        {
+            "id": "10",
+            "title": "Coffee"
+        },
+        {
+            "id": "11",
+            "title": "Philosophy"
+        },
+        {
+            "id": "12",
+            "title": "Uniform"
+        },
+        {
+            "id": "13",
+            "title": "Floor Plan"
+        }
+    ],
+    "quizzes": [
+        {
+            "id": "1",
+            "question": "To be called a 'Scotch', whisky must, of course, be made in Scotland. Which of the following is one other requirement of a Scotch?",
+            "answer": "Aged for three years and a day",
+            "quizId": "2"
+        },
+        {
+            "id": "2",
+            "question": "Proof is a standard to judge alcoholic content in a spirit. For example, if a spirit was '100 proof', what would its alcoholic percentage be? (US usage)",
+            "answer": "50%",
+            "quizId": "2"
+        },
+        {
+            "id": "3",
+            "question": "What American spirit is made from aging corn whiskey in charred casks?",
+            "answer": "Bourbon",
+            "quizId": "2"
+        },
+        {
+            "id": "4",
+            "question": "Tequila is a spirit made in Mexico. From what cactus-like plant is Tequila made??",
+            "answer": "Agave",
+            "quizId": "2"
+        },
+        {
+            "id": "5",
+            "question": "This spirit is made from many ingredients, but usually potatoes. After fermentation and distillation, it is filtered repeatedly to achieve a nearly colorless, tasteless, odorless drink. What is it?",
+            "answer": "Vodka",
+            "quizId": "2"
+        },
+        {
+            "id": "6",
+            "question": "This drink, popular in France in the 19th century, was legendary for its potent strength and characteristic green color. What was it?",
+            "answer": "Absinthe",
+            "quizId": "2"
+        },
+        {
+            "id": "7",
+            "question": "The Japanese spirit shochu is actually a distilled form of what other drink?",
+            "answer": "Sake",
+            "quizId": "2"
+        },
+        {
+            "id": "8",
+            "question": "Beefeater and Bombay Sapphire are two brands of what spirit?",
+            "answer": "Gin",
+            "quizId": "2"
+        },
+        {
+            "id": "9",
+            "question": "Single Malt Scotch is, by definition, of superior quality to Blended Scotch.",
+            "answer": "False",
+            "quizId": "2"
+        },
+        {
+            "id": "10",
+            "question": "This spirit is made from distilling wine and then aging it in oak barrels. During the aging process, water vapor is lost and fungus feeds on the alcohol, producing a stronger, wine-like spirit. Two famous varieties of this spirit are cognac and armagnac",
+            "answer": "Brandy",
+            "quizId": "2"
+        }
+    ],
+
+    "userLibrary": [
+        {
+            "id": "1",
+            "userid": "5b19c6c41b6e3acab61bc7ac",
+            "libraryid": "5b19cbd6b8ac305b7acd822c",
+            "start": "1528471864500",
+            "end": null
+        },
+        {
+            "id": "2",
+            "userid": "5b19c6c43597e726bf2bfeab",
+            "libraryid": "5b19cbd648445e59cbd35a1d",
+            "start": "1528471864500",
+            "end": "1528502345636"
+        },
+        {
+            "id": "3",
+            "userid": "5b19c6c41b6e3acab61bc7ac",
+            "libraryid": "5b19cbd60e139b35da1fd8ac",
+            "start": "1528471864500",
+            "end": "1528472104015"
+        },
+        {
+            "id": "4",
+            "userid": "5b19c6c41b6e3acab61bc7ac",
+            "libraryid": "5b19cbd6b8ac305b7acd822c",
+            "start": "1528471864500",
+            "end": null
+        },
+        {
+            "id": "5",
+            "userid": "5b19c6c402fac3ab5e4438f3",
+            "libraryid": "5b19cbd6b8ac305b7acd822c",
+            "start": "1528471863470",
+            "end": null
+        },
+        {
+            "id": "6",
+            "userid": "5b19c6c4771bfb74e4e6aaae",
+            "libraryid": "5b19cbd65acc320874f469b8",
+            "start": "1528471864500",
+            "end": "1528472061613"
+        }
+    ],
+    "trainerEmployee": [
+        {
+            "id": "1",
+            "userid": "5b19c6c47af24b3171af56a6",
+            "trainerid": "5b19c6c4243ff1e2201f9265",
+            "review": "They did this particular thing really well"
+        },
+        {
+            "id": "2",
+            "userid": "5b19c6c491ec7264d7e4ae6a",
+            "trainerid": "5b9c6c4443a3d7b006fd00d",
+            "review": "They did this particular thing really well"
+        },
+        {
+            "id": "3",
+            "userid": "5b19c6c4f54d29e58aa89fc2",
+            "trainerid": "5b19c6c4a2736825eb4af4e8",
+            "review": "They did this particular thing really well"
+        },
+        {
+            "id": "4",
+            "userid": "5b19c6c4e833871ad519cac6",
+            "trainerid": "5b19c6c49d2d5693daafb939",
+            "review": "They did this particular thing really well"
+        }
+    ]
+}
