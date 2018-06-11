@@ -1,68 +1,43 @@
 import React, { Component } from "react";
 // Using bloomer tags to import bulma styling
-import { Navbar, NavbarItem, NavbarBurger, NavbarBrand, NavbarMenu, NavbarLink, Image } from "bloomer";
+import { Navbar, NavbarItem, NavbarBurger, NavbarBrand, NavbarMenu, Image } from 'bloomer';
 import logo from '../logo.svg';
 import 'bulma/css/bulma.min.css'
 import './navbar.css'
 // import Login from '../LoginRegistration/login'
 
 export default class NavBar extends Component {
-    // Storing session storage as an object in state named currentUser
+    // Set initial state
     state = {
-        isActive: false,
-        firstName: "",
-        image: "",
-        searchValue: "",
-        searchType: "All"
+        searchTerms: ""
     }
 
-    // Making a fetch request against sessionStorage to find relevant user and storing first name in state
-    componentDidMount() {
-        const currentUser = sessionStorage.getItem('userId')
-        if (currentUser !== null) {
-            fetch(`http://127.0.0.1:8088/users/${currentUser}`)
-                .then(r => r.json())
-                .then(response => {
-                    this.setState({
-                        firstName: response.name.first,
-                        image: response.image
-                    })
-                })
+    /**
+     * Local search handler, which invokes the searchHandler reference
+     * passed from App
+     */
+    search = (e) => {
+        if (e.charCode === 13) {
+            this.props.searchHandler(this.state.searchTerms)
+            this.setState({ searchTerms: "" })
         }
     }
 
-    // event handler for clicking nav drop down burger
-    // sets isActive property in state to the opposite of what it currently is
-    // onClickNav = function (e) {
-    //     this.setState({
-    //         isActive: (!this.state.isActive)
-    //     })
-    //     document.querySelector("#input__search").value = ""
-    //     this.props.setView(e)
-    // }.bind(this)
+    LoginLogout = () => {
+        if (this.props.activeUser === null) {
+            return <a className="nav-link" id="nav__login"
+                onClick={this.props.viewHandler} href="#">Login</a>
+        } else {
+            return <a className="nav-link" id="nav__logout"
+                onClick={this.props.viewHandler} href="#">Logout</a>
+        }
+    }
 
-    //on click of search button
-    onClickSearch = function (e) {
-        //fire function to close navbar
-        this.onClickNav(e)
-
-        /*
-            add code here
-            to fire search functionality
-        */
-    }.bind(this)
-
-    handleSearchKeyPress = function (event) {
-        this.setState({
-            searchValue: event.target.value,
-        })
-    }.bind(this)
-
-    handleSearchTypeChange = function (event) {
-        this.setState({
-            searchType: event.target.textContent
-        })
-    }.bind(this)
+    handleFieldChange = (evt) => {
+        const stateToChange = {}
+        stateToChange[evt.target.id] = evt.target.value
+        this.setState(stateToChange)
+    }
 
     render() {
         if (this.props.activeUser !== null){
@@ -70,7 +45,7 @@ export default class NavBar extends Component {
             return (
                 <Navbar>
                     <NavbarBrand>
-                        <img src={logo} className="App-logo" alt="logo" />
+                        <img src={logo} className="App-logo" alt="logo"/>
                         <NavbarItem>Home |</NavbarItem>
                         <NavbarBurger isActive={this.state.isActive} onClick={this.onClickNav} />
                     </NavbarBrand>
