@@ -4,17 +4,13 @@ import { Button } from 'bloomer';
 
 export default class Lesson extends Component {
 
-    displayLesson = function (id) {
-
-    }
-
-
 
     render() {
         return (
             <div>
-                <p>Lesson Card</p>
-                <Button>Finished </Button>
+                <h1>Lesson: {this.props.lesson.title}</h1>
+                <p>{this.props.lesson.content}</p>
+                <Button>Finished</Button>
                 <Button id={this.props.id} onClick={() => this.props.showview("library")}>All Lessons</Button>
             </div>
         )

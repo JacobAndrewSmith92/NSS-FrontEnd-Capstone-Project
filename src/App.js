@@ -17,15 +17,24 @@ class App extends Component {
     currentView: "",
     image: "",
     allLessons: [],
+    currentLesson: "",
     inProgress: [],
     needToDo: [],
     completed: [],
     errorMessage: "Your email or password is incorrect"
   }
 
-  myLessons = function () {
-
-  }
+  displayLesson = function (id) {
+    console.log("button clicked")
+    this.state.allLessons.map(lesson => {
+      if (id === lesson.id) {
+        this.setState({
+          currentLesson: lesson
+        })
+      }
+      this.showview("lesson")
+    })
+  }.bind(this)
 
   componentDidMount() {
     fetch(`http://127.0.0.1:8088/users/${this.state.activeUser}`)
@@ -45,9 +54,9 @@ class App extends Component {
             allLessons: response
           })
         })
-
       )
   }
+
 
   setActiveUser = (val) => {
     if (val) {
@@ -95,9 +104,9 @@ class App extends Component {
         case "profile":
           return <Profile showview={this.showview} />
         case "library":
-          return <Library allLessons={this.state.allLessons} showview={this.showview} />
+          return <Library displayLesson={this.displayLesson} allLessons={this.state.allLessons} showview={this.showview} />
         case "lesson":
-          return <Lesson showview={this.showview} id={this.state.id} />
+          return <Lesson displayLesson={this.displayLesson} showview={this.showview} id={this.state.id} lesson={this.state.currentLesson} />
         case "community":
           return <Community showview={this.showview} />
         case "personality":
