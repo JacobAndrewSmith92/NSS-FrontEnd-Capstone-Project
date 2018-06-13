@@ -2,3 +2,7 @@ img {
     border-radius: 50%;
     padding-right: 5px;
 }
+
+.nav__pointer {
+    cursor: pointer;
+}

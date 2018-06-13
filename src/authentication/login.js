@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from '../logo.svg'
 import { Field, Label, Control, Input, Button } from 'bloomer';
-import $ from 'jquery'
+// import $ from 'jquery'
 
 export default class Login extends Component {
     state = {
@@ -26,7 +26,7 @@ export default class Login extends Component {
                 // User exists. Set local storage, and show home view
                 if (user.length) {
                     this.props.setActiveUser(user[0].id)
-                    this.props.showView("home")
+                    this.props.showview("home")
 
                 // User doesn't exist
                 } else {
@@ -42,13 +42,12 @@ export default class Login extends Component {
                     // Set local storage with newly created user's id and show home view
                     .then(newUser => {
                         this.props.setActiveUser(newUser.id)
-                        this.props.showView("home")
+                        this.props.showview("home")
                     })
                 }
 
             })
     }.bind(this)
-
 
     render() {
         return (
