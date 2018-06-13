@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 // Using bloomer tags to import bulma styling
 import { Navbar, NavbarItem, NavbarBurger, NavbarBrand, NavbarMenu, Image } from 'bloomer';
+// import Login from '../authentication/login';
 import logo from '../logo.svg';
 import 'bulma/css/bulma.min.css'
 import './navbar.css'
-// import Login from '../LoginRegistration/login'
 
 export default class NavBar extends Component {
     // Set initial state
@@ -26,10 +26,10 @@ export default class NavBar extends Component {
     LoginLogout = () => {
         if (this.props.activeUser === null) {
             return <a className="nav-link" id="nav__login"
-                onClick={this.props.viewHandler} href="#">Login</a>
+                onClick={this.props.showview} href="/">Login</a>
         } else {
             return <a className="nav-link" id="nav__logout"
-                onClick={this.props.viewHandler} href="#">Logout</a>
+                onClick={this.props.showview} href="/">Logout</a>
         }
     }
 
@@ -41,21 +41,20 @@ export default class NavBar extends Component {
 
     render() {
         if (this.props.activeUser !== null){
-            // debugger
             return (
                 <Navbar>
                     <NavbarBrand>
                         <img src={logo} className="App-logo" alt="logo"/>
-                        <NavbarItem>Home |</NavbarItem>
-                        <NavbarBurger isActive={this.state.isActive} onClick={this.onClickNav} />
+                        <NavbarItem className="nav__pointer" onClick={() => this.props.showview("home")}>Home</NavbarItem>
+                        {/* <NavbarBurger isActive={this.state.isActive} onClick={this.props.showview} /> */}
                     </NavbarBrand>
                     <NavbarMenu isActive={this.state.isActive}>
-                        <NavbarItem  id="nav__notifications" className="nav__pointer" onClick={this.onClickNav}> <Image isSize="32x32" src={this.props.image}/>Profile</NavbarItem>
-                        <NavbarItem  id="nav__profile" className="nav__pointer" onClick={this.onClickNav}>Library</NavbarItem>
-                        <NavbarItem  id="nav__profile" className="nav__pointer" onClick={this.onClickNav}>Community</NavbarItem>
-                        <NavbarItem  id="nav__profile" className="nav__pointer" onClick={this.onClickNav}>Personality Assessment</NavbarItem>
+                        <NavbarItem id="nav__profile" className="nav__pointer" onClick={() => this.props.showview("profile")}> <Image isSize="32x32" src={this.props.image}/>Profile</NavbarItem>
+                        <NavbarItem id="nav__library" className="nav__pointer" onClick={() => this.props.showview("library")}>Library</NavbarItem>
+                        <NavbarItem id="nav__community" className="nav__pointer" onClick={() => this.props.showview("community")}>Community</NavbarItem>
+                        <NavbarItem id="nav__personality" className="nav__pointer" onClick={() => this.props.showview("personality")}>Personality Assessment</NavbarItem>
                     </NavbarMenu>
-                    <NavbarItem  id="nav__logout" className="nav__pointer" onClick={this.onClickNav}>Logout</NavbarItem>
+                    <NavbarItem id="nav__logout" className="nav__pointer" onClick={() => this.props.showview("logout")}>Logout</NavbarItem>
                 </Navbar>
             )
         } else {
