@@ -3,6 +3,13 @@ import { Card, CardImage, CardContent, Media, MediaLeft, Image, MediaContent, Ti
 import './library.css';
 
 export default class LessonCard extends Component {
+
+    lessonMethod = function (evt) {
+        const id = evt.target.id
+        this.props.displayLesson(id)
+    }.bind(this)
+
+
     render() {
         return (
             <div className="card">
@@ -21,12 +28,13 @@ export default class LessonCard extends Component {
                             <Subtitle isSize={6}>Category: {this.props.category}</Subtitle>
                         </MediaContent>
                     </Media>
-                    <Button onClick={() => this.props.showview("lesson")}>Start Lesson</Button>
+                    <Button onClick={this.lessonMethod} id={this.props.id}>Start Lesson</Button>
                 </CardContent>
             </Card>
             </div>
         )
     }
 }
+// (evt) => this.props.showview("lesson", evt)
 
 
