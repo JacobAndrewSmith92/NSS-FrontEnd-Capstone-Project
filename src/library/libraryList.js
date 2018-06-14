@@ -6,7 +6,6 @@ import 'bulma/css/bulma.min.css';
 export default class LibraryList extends Component {
 
     render() {
-        console.log(this.props.allLessons[0].content)
         return (
             <div className="library__list">
                 <HeroBody>

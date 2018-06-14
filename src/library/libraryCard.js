@@ -4,6 +4,8 @@ import './library.css';
 
 export default class LessonCard extends Component {
 
+// Method that grabs the event target id from the Button and stores it as id and passes it to a function called displayLesson
+
     lessonMethod = function (evt) {
         const id = evt.target.id
         this.props.displayLesson(id)
@@ -35,6 +37,5 @@ export default class LessonCard extends Component {
         )
     }
 }
-// (evt) => this.props.showview("lesson", evt)
 
 

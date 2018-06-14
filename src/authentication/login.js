@@ -29,22 +29,23 @@ export default class Login extends Component {
                     this.props.showview("home")
 
                 // User doesn't exist
-                } else {
-                    // Create user in API
-                    fetch("http://127.0.0.1:8088/users", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify({email: this.state.email, password: this.state.password})
-                    })
-
-                    // Set local storage with newly created user's id and show home view
-                    .then(newUser => {
-                        this.props.setActiveUser(newUser.id)
-                        this.props.showview("home")
-                    })
                 }
+                // else {
+                //     // Create user in API
+                //     fetch("http://127.0.0.1:8088/users", {
+                //         method: "POST",
+                //         headers: {
+                //             "Content-Type": "application/json"
+                //         },
+                //         body: JSON.stringify({email: this.state.email, password: this.state.password})
+                //     })
+
+                //     // Set local storage with newly created user's id and show home view
+                //     .then(newUser => {
+                //         this.props.setActiveUser(newUser.id)
+                //         this.props.showview("home")
+                //     })
+                // }
 
             })
     }.bind(this)
