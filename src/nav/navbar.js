@@ -42,7 +42,8 @@ export default class NavBar extends Component {
     render() {
         if (this.props.activeUser !== null){
             return (
-                <Navbar>
+                <div>
+                <Navbar className="nav__bar">
                     <NavbarBrand>
                         <img src={logo} className="App-logo" alt="logo"/>
                         <NavbarItem className="nav__pointer" onClick={() => this.props.showview("home")}>Home</NavbarItem>
@@ -56,6 +57,7 @@ export default class NavBar extends Component {
                     </NavbarMenu>
                     <NavbarItem id="nav__logout" className="nav__pointer" onClick={() => this.props.showview("logout")}>Logout</NavbarItem>
                 </Navbar>
+                </div>
             )
         } else {
             return(
