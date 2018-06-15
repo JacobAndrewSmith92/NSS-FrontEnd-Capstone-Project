@@ -12,7 +12,6 @@ export default class Lesson extends Component {
     render() {
         return (
             <div>
-                <Status />
                 <h1>Lesson: {this.props.lesson.title}</h1>
                 <p>{this.props.lesson.content}</p>
                 <Button>Finished</Button>
