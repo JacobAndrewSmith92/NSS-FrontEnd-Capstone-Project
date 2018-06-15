@@ -6,9 +6,11 @@ import Profile from './profile/profile';
 import Library from './library/libraryList';
 import Status from './home/status';
 import Community from './community/community';
+import Landing from './home/landing';
 import Lesson from './library/lesson'
 import Personality from './personality/personality';
 import Needed from './home/needed';
+import InProgress from './home/inProgress';
 
 class App extends Component {
   state = {
@@ -25,56 +27,61 @@ class App extends Component {
     errorMessage: "Your email or password is incorrect"
   }
 
-/* Method that takes one argument, "id" and maps over allLessons in state to compare the argument id to the id in allLessons. If they match, pass content to lesson and display content. */
+  /* Method that takes one argument, "id" and maps over allLessons in state to compare the argument id to the id in allLessons. If they match, pass content to lesson and display content. */
 
   displayLesson = function (id) {
-    console.log("button clicked")
     const inProgressLessons = this.state.inProgress
+    let inProgressIds = []
+    this.state.inProgress.map(id => {
+      inProgressIds.push(id.id)
+    })
     this.state.allLessons.map(lesson => {
       if (id === lesson.id) {
-        this.postLessonAPI(lesson.id)
-        inProgressLessons.push(lesson)
+        if(!inProgressIds.includes(lesson.id)){
+          this.postLessonAPI(lesson.id)
+          inProgressLessons.push(lesson)
+        }
         this.setState({
-          currentLesson:lesson,
-          inProgress:inProgressLessons
+          currentLesson: lesson,
+          inProgress: inProgressLessons
         })
       }
       this.showview("lesson")
     })
   }.bind(this)
 
-postLessonAPI = function (lessonId) {
-const startedLesson = {
-  "userId": this.state.activeUser,
-  "libraryId": lessonId,
-  "start": Date.now(),
-  "end": null
-}
-
-  fetch(`http://127.0.0.1:8088/userLibrary`, {
-    method: "POST",
-    body: JSON.stringify(startedLesson),
-    headers: {
-        "Content-Type": "application/json"
+  postLessonAPI = function (lessonId) {
+    const startedLesson = {
+      "userId": this.state.activeUser,
+      "libraryId": lessonId,
+      "start": Date.now(),
+      "end": null
     }
-  })
-}.bind(this)
+
+    fetch(`http://127.0.0.1:8088/userLibrary`, {
+      method: "POST",
+      body: JSON.stringify(startedLesson),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+  }.bind(this)
 
 
-/*
-1. When user clicks on the start lesson button they are re-routed to the lessons/in progress component.
-2. A fetch is requested to post to the API with moving the lesson to in progress
-{
-  id,
-  userId,
-  libraryId,
-  start time,
-  end time
-}
-*/
+  /*
+  1. When user clicks on the start lesson button they are re-routed to the lessons/in progress component.
+  2. A fetch is requested to post to the API with moving the lesson to in progress
+  {
+    id,
+    userId,
+    libraryId,
+    start time,
+    end time
+  }
+  */
 
 
-/* Method that takes the response from a fetch request, and filters through the boolean key "mandatory" to check if an item is set to true. If there's  a match, return and store the content to a new array */
+  /* Method that takes the response from a fetch request, and filters through the boolean key "mandatory" to check if an item is set to true. If there's  a match, return and store the content to a new array */
 
   mandatoryLessons = function (resp) {
     const newArray = resp.filter(Do => {
@@ -83,42 +90,48 @@ const startedLesson = {
     return newArray
   }.bind(this)
 
-  setInProgress = function (resp) {
 
-  }
 
+  // Fetch sets current user email and image
   componentDidMount() {
-    fetch(`http://127.0.0.1:8088/users/${this.state.activeUser}`)
+    return fetch(`http://127.0.0.1:8088/users/${this.state.activeUser}`)
       .then(r => r.json()
-      .then(response => {
+        .then(response => {
           this.setState({
             image: response.image,
             email: response.email
           })
-    fetch(`http://127.0.0.1:8088/library?&_expand=category`)
-      .then(r => r.json()
-      .then(response => {
-          const mandatoryLessons = this.mandatoryLessons(response)
-
-          this.setState({
-            allLessons: response,
-            needToComplete: mandatoryLessons
+          // Fetch that sets all lessons from library and checks against which lessons are mandatory
+          return fetch(`http://127.0.0.1:8088/library?&_expand=category`)
+            .then(r => r.json()
+              .then(response => {
+                const mandatoryLessons = this.mandatoryLessons(response)
+                this.setState({
+                  allLessons: response,
+                  needToComplete: mandatoryLessons
+                })
+                // Fetch that checks which lessons the activeUser is currently working on and setting inProgress
+                return fetch(`http://127.0.0.1:8088/userLibrary`)
+              })
+              .then(r => r.json())
+              .then(response => {
+                const inProgressLessons = this.state.inProgress
+                const mapAllLessons = this.state.allLessons.map(all => {
+                  response.map(resp => {
+                    if (resp.userId === this.state.activeUser && resp.libraryId === all.id) {
+                      inProgressLessons.push(all)
+                      console.log("In Progress:", inProgressLessons)
+                      this.setState({
+                        inProgress: inProgressLessons
+                      })
+                    }
+                  })
                 })
               })
             )
         })
       )
-      // Fetch request that is going to check the userLibrary to query and set the inProgress in state.
-    fetch(`http://127.0.0.1:8088/userLibrary`)
-    .then(r => r.json())
-    .then(response => {
-
-      if (response.userId === this.state.activeUser) {
-        this.setState({
-          inProgress: response
-        })
-      }
-    })
+    // Fetch request that is going to check the userLibrary to query and set inProgress in state.
   }
 
   setActiveUser = (val) => {
@@ -159,21 +172,35 @@ const startedLesson = {
 
   View = () => {
     if (sessionStorage.getItem("userId") === null) {
-      return <Login showview={this.showview} setActiveUser={this.setActiveUser} />
+      return <Login
+        showview={this.showview}
+        setActiveUser={this.setActiveUser} />
     } else {
       switch (this.state.currentView) {
         case "logout":
-          return <Login showview={this.showview} setActiveUser={this.setActiveUser} />
+          return <Login
+            showview={this.showview}
+            setActiveUser={this.setActiveUser} />
         case "profile":
-          return <Profile showview={this.showview} />
+          return <Profile
+            showview={this.showview} />
         case "library":
-          return <Library displayLesson={this.displayLesson} allLessons={this.state.allLessons} showview={this.showview} />
+          return <Library
+            displayLesson={this.displayLesson}
+            allLessons={this.state.allLessons}
+            showview={this.showview} />
+        case "progress":
+          return <InProgress
+            showview={this.showview}
+            inProgress={this.state.inProgress}
+            displayLesson={this.displayLesson}
+          />
         case "needed":
           return <Needed
             showview={this.showview}
-            inProgress={this.state.inProgress.length}
             needToComplete={this.state.needToComplete}
-            completed={this.state.completed.length}/>
+            displayLesson={this.displayLesson}
+          />
         case "lesson":
           return <Lesson
             displayLesson={this.displayLesson}
@@ -187,21 +214,10 @@ const startedLesson = {
             showview={this.showview} />
         case "home":
         default:
-          return <Status
-            activeUser={this.state.activeUser}
-            inProgress={this.state.inProgress.length}
-            completed={this.state.completed.length}
-            needToCompleteNumber={this.state.needToComplete.length}
-            showview={this.showview}/>
+          return <Landing />
       }
     }
   }
-
-
-
-
-
-
 
   render() {
     return (
@@ -211,6 +227,12 @@ const startedLesson = {
           activeUser={this.state.activeUser}
           setActiveUser={this.setActiveUser}
           image={this.state.image} />
+        <Status
+          showview={this.showview}
+          inProgressNum={this.state.inProgress.length}
+          completedNum={this.state.completed.length}
+          needToCompleteNum={this.state.needToComplete.length}
+        />
         {this.View()}
       </div>
 
