@@ -14,7 +14,16 @@ export default class LibraryList extends Component {
                     </Container>
                 </HeroBody>
                 {this.props.allLessons.map(lesson => (
-                    <LibraryCard key={lesson.id} displayLesson={this.props.displayLesson} id={lesson.id} title={lesson.title} category={lesson.category.title} image={lesson.category.image} content={lesson.content} showview={this.props.showview}/>
+                    <LibraryCard
+                    key={lesson.id}
+                    displayLesson={this.props.displayLesson}
+                    lessonMethod={this.props.lessonMethod}
+                    id={lesson.id}
+                    title={lesson.title}
+                    category={lesson.category.title}
+                    image={lesson.category.image}
+                    content={lesson.content}
+                    showview={this.props.showview}/>
                 ))}
             </div>
         )

@@ -39,7 +39,13 @@ export default class Community extends Component {
         return (
             <div>
                 {this.state.allContacts.map(contact => {
-                    return (<ContactCard key={contact.id} id={contact.id} firstName={contact.firstName} lastName={contact.lastName} image={contact.image} email={contact.email} />)
+                    return ( <ContactCard
+                        key={contact.id}
+                        id={contact.id}
+                        firstName={contact.firstName}
+                        lastName={contact.lastName}
+                        image={contact.image}
+                        email={contact.email} />)
                 })}
             </div>
         )
