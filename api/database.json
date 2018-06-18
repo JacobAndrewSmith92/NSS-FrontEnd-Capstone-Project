@@ -674,14 +674,10 @@
       "password": "password",
       "roleId": "1",
       "image": "https://www.w3schools.com/w3images/avatar2.png"
-    },
-    {
-      "email": "",
-      "password": "",
-      "id": "phP3aac"
     }
+
   ],
-  "library": [
+  "libraries": [
     {
       "id": "5b19cbd6e18740a827996b69",
       "title": "Ex occaecat labore sit elit deserunt pariatur fugiat pariatur officia fugiat proident.",
@@ -1036,6 +1032,27 @@
       "start": 1529091123345,
       "end": null,
       "id": "DdvSMtR"
+    },
+    {
+      "userId": "5b19c6c4243ff1e2201f9265",
+      "libraryId": "5b19cbd65548bc5b687603d6",
+      "start": 1529204943097,
+      "end": null,
+      "id": "XuWWGkG"
+    },
+    {
+      "userId": "5b19c6c4243ff1e2201f9265",
+      "libraryId": "5b19cbd661a25f8440075a57",
+      "start": 1529204996261,
+      "end": null,
+      "id": "0UTFd7f"
+    },
+    {
+      "userId": "5b19c6c4243ff1e2201f9265",
+      "libraryId": "5b19cbd6460231c2754f0345",
+      "start": 1529333961668,
+      "end": null,
+      "id": "bndqsXD"
     }
   ],
   "trainerEmployee": [

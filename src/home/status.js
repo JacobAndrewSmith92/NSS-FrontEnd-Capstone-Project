@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Breadcrumb, BreadcrumbItem } from 'bloomer';
+import 'bulma/css/bulma.min.css';
 
 export default class Home extends Component {
 

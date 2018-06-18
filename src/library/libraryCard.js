@@ -4,13 +4,14 @@ import './library.css';
 
 export default class LessonCard extends Component {
 
-    // Method that grabs the event target id from the Button and stores it as id and passes it to a function called displayLesson
+// Method that grabs the event target id from the Button and stores it as id and passes it to a function called displayLesson
 
     lessonMethod = function (evt) {
         const id = evt.target.id
         this.props.displayLesson(id)
     }.bind(this)
 
+// Function that checks whether or not the boolean value is true or false based on whether the user has started a lesson or not.
     hasStarted = function (bool) {
         if (bool) {
             return <Button onClick={this.lessonMethod} id={this.props.id}>Resume Lesson</Button>

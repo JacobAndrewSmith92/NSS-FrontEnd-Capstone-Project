@@ -1,10 +1,5 @@
 import React, { Component } from 'react';
-import Status from '../home/status';
 import { Button } from 'bloomer';
-
-
-
-
 
 export default class Lesson extends Component {
 
