@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 // Using bloomer tags to import bulma styling
-import { Navbar, NavbarItem, NavbarBurger, NavbarBrand, NavbarMenu, Image } from 'bloomer';
+import { Navbar, NavbarItem, NavbarBrand, NavbarMenu, Image } from 'bloomer';
+import 'bulma/css/bulma.min.css';
 // import Login from '../authentication/login';
 import logo from '../logo.svg';
 import 'bulma/css/bulma.min.css'

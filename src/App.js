@@ -5,7 +5,7 @@ import Login from './authentication/login';
 import Profile from './profile/profile';
 import Library from './library/libraryList';
 import Status from './home/status';
-import Community from './community/community';
+import Community from './community/communityList';
 import Landing from './home/landing';
 import Lesson from './library/lesson'
 import Personality from './personality/personality';
@@ -50,6 +50,19 @@ class App extends Component {
     })
   }.bind(this)
 
+  /*
+  1. When user clicks on the start lesson button they are re-routed to the lessons/in progress component.
+  2. A fetch is requested to post to the API with moving the lesson to in progress
+  {
+    id,
+    userId,
+    libraryId,
+    start time,
+    end time
+  }
+  */
+
+
   postLessonAPI = function (lessonId) {
     const startedLesson = {
       "userId": this.state.activeUser,
@@ -67,20 +80,6 @@ class App extends Component {
     })
   }.bind(this)
 
-
-  /*
-  1. When user clicks on the start lesson button they are re-routed to the lessons/in progress component.
-  2. A fetch is requested to post to the API with moving the lesson to in progress
-  {
-    id,
-    userId,
-    libraryId,
-    start time,
-    end time
-  }
-  */
-
-
   /* Method that takes the response from a fetch request, and filters through the boolean key "mandatory" to check if an item is set to true. If there's  a match, return and store the content to a new array */
 
   mandatoryLessons = function (resp) {
@@ -96,15 +95,15 @@ class App extends Component {
   componentDidMount() {
     return fetch(`http://127.0.0.1:8088/users/${this.state.activeUser}`)
       .then(r => r.json()
-        .then(response => {
+      .then(response => {
           this.setState({
             image: response.image,
             email: response.email
           })
           // Fetch that sets all lessons from library and checks against which lessons are mandatory
-          return fetch(`http://127.0.0.1:8088/library?&_expand=category`)
+          return fetch(`http://127.0.0.1:8088/libraries?&_expand=category`)
             .then(r => r.json()
-              .then(response => {
+            .then(response => {
                 const mandatoryLessons = this.mandatoryLessons(response)
                 this.setState({
                   allLessons: response,
@@ -113,14 +112,13 @@ class App extends Component {
                 // Fetch that checks which lessons the activeUser is currently working on and setting inProgress
                 return fetch(`http://127.0.0.1:8088/userLibrary`)
               })
-              .then(r => r.json())
-              .then(response => {
+            .then(r => r.json())
+            .then(response => {
                 const inProgressLessons = this.state.inProgress
                 const mapAllLessons = this.state.allLessons.map(all => {
                   response.map(resp => {
                     if (resp.userId === this.state.activeUser && resp.libraryId === all.id) {
                       inProgressLessons.push(all)
-                      console.log("In Progress:", inProgressLessons)
                       this.setState({
                         inProgress: inProgressLessons
                       })
@@ -218,6 +216,8 @@ class App extends Component {
       }
     }
   }
+
+
 
   render() {
     return (
