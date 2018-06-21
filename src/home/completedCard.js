@@ -11,7 +11,7 @@ export default class completedCard extends Component {
                     <MediaContent>
                         <Content>
                             <p>
-                                <strong>{this.props.finished}</strong>
+                            <small>Completed on: </small><strong>{this.props.finished}</strong>
                                 <br/>
                                 {this.props.title}
                             </p>

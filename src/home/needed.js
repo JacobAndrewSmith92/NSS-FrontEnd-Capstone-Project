@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import LibraryCard from '../library/libraryCard';
-import Status from './status';
+import '../library/libraryList.css';
 
 export default class Needed extends Component {
 
 
     render() {
         return (
-            <div>
+            <div className="flexbox__Cards">
                 {this.props.needToComplete.map(needed => (
                     <LibraryCard
                     key={needed.id}
