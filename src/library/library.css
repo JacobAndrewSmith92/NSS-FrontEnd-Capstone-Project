@@ -1,12 +1,8 @@
 .card {
     width: 400px;
     height: 525px;
-    display: inline-block;
+}
 
-}
-.library__card {
-    margin-top: 10px;
-}
 
 img {
     border-radius: 0;

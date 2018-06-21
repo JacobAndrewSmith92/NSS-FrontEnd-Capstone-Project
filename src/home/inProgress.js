@@ -1,14 +1,31 @@
 import React, { Component } from 'react';
 import LibraryCard from '../library/libraryCard';
-import Status from './status';
-
+import '../library/libraryList.css';
 export default class Progress extends Component {
+
+
 render() {
     return (
-        <div>
-        {this.props.inProgress.map(prog => (
-            <LibraryCard key={prog.id} displayLesson={this.props.displayLesson} id={prog.id} title={prog.title} category={prog.category.title} image={prog.category.image} content={prog.content} showview={this.props.showview} hasStarted={true}/>
-        ))}
+        <div className="flexbox__Cards">
+        {this.props.inProgress.map(progress => {
+            let categoryTitleImage = ""
+            this.props.categories.forEach(category => {
+                if (category.id === progress.library.categoryId) {
+                    categoryTitleImage = category
+                }
+            })
+            return (<LibraryCard
+                key={progress.id}
+                id={progress.id}
+                displayLesson={this.props.displayLesson}
+                lessonMethod={this.props.lessonMethod}
+                title={progress.library.title}
+                category={categoryTitleImage.title}
+                image={categoryTitleImage.image}
+                content={progress.content}
+                showview={this.props.showview}
+                hasStarted={true}/>)
+        })}
         </div>
     )
 }

@@ -19,7 +19,7 @@ export default class Community extends Component {
             })
     }
 
-    compare = function (a, b) {
+    compare = (a, b) => {
         // Use toUpperCase() to ignore character casing
         const firstNameA = a.firstName.toUpperCase();
         const firstNameB = b.firstName.toUpperCase();
@@ -31,7 +31,7 @@ export default class Community extends Component {
             comparison = -1;
         }
         return comparison;
-    }.bind(this)
+    }
 
 
 
@@ -39,7 +39,14 @@ export default class Community extends Component {
         return (
             <div>
                 {this.state.allContacts.map(contact => {
-                    return (<ContactCard key={contact.id} id={contact.id} firstName={contact.firstName} lastName={contact.lastName} image={contact.image} email={contact.email} />)
+                    <h1>Contacts</h1>
+                    return ( <ContactCard
+                        key={contact.id}
+                        id={contact.id}
+                        firstName={contact.firstName}
+                        lastName={contact.lastName}
+                        image={contact.image}
+                        email={contact.email} />)
                 })}
             </div>
         )
