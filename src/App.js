@@ -34,61 +34,63 @@ class App extends Component {
 
   lessonMethod = function (evt) {
     const id = evt.target.id
+    console.log(id)
     fetch(`http://127.0.0.1:8088/userLibrary`, {
       method: "POST",
       headers: {
-          "Content-Type": "application/json"
+        "Content-Type": "application/json"
       },
       body: JSON.stringify({
-          userId: this.state.activeUser,
-          libraryId: id,
-          start: Date.now(),
-          end: null
+        userId: this.state.activeUser,
+        libraryId: id,
+        start: Date.now(),
+        end: null
       })
     })
-    .then(r => r.json())
-    .then(response => {
-      this.displayLesson(response.id)
-    })
+      .then(r => r.json())
+      .then(response => {
+        this.displayLesson(response.libraryId)
+      })
 
   }.bind(this)
 
 
-setCategories = () => {
-  fetch(`http://127.0.0.1:8088/categories`)
-  .then(r => r.json())
-  .then(response => {
-    console.log(response)
-    this.setState({
-      categories: response
-    })
+  setCategories = () => {
+    fetch(`http://127.0.0.1:8088/categories`)
+      .then(r => r.json())
+      .then(response => {
+        console.log(response)
+        this.setState({
+          categories: response
+        })
 
-  })
-}
+      })
+  }
 
-setCategories()
-{console.log(this.state.categories)}
-
+  setCategories() { console.log(this.state.categories) }
   displayLesson = (id) => {
-    fetch(`http://127.0.0.1:8088/userLibrary/${id}?&_expand=library`)
-    .then(r => r.json())
-    .then(userLessonHistory => {
-      console.log(userLessonHistory)
-      const newstartedLessons = []
-      const inProgressArray = this.state.inProgress
-      inProgressArray.map(lesson => {
-        if (lesson.library.id !== userLessonHistory.library.id) {
-          newstartedLessons.push(userLessonHistory.library)
-        }
+    // id is suppose to be the user history id
+    fetch(`http://127.0.0.1:8088/userLibrary/${id}?_expand=library`)
+      .then(r => r.json())
+      .then(userLessonHistory => {
+        console.log(userLessonHistory)
+        const newstartedLessons = []
+        const inProgressArray = this.state.inProgress
+        inProgressArray.map(lesson => {
+          console.log("InProgress Lessons:", lesson)
+          console.log("User Intersection Library", userLessonHistory)
+          if (lesson.library.id !== userLessonHistory.library.id) {
+            newstartedLessons.push(userLessonHistory.library)
+          }
+        })
+        inProgressArray.push(newstartedLessons)
+        this.setState({
+          inProgress: inProgressArray,
+          currentLesson: userLessonHistory.library,
+          currentLessonId: userLessonHistory.id
+        })
+        this.showview("lesson")
       })
-      inProgressArray.push(newstartedLessons)
-      this.setState({
-        inProgress: inProgressArray,
-        currentLesson: userLessonHistory.library,
-        currentLessonId: userLessonHistory.id
-      })
-      this.showview("lesson")
-    })
   }
   /*
   1. When user clicks on the start lesson button they are re-routed to the lessons/in progress component.
@@ -119,10 +121,10 @@ setCategories()
         "Content-Type": "application/json"
       }
     })
-    .then(r => r.json())
-    .then(response => {
+      .then(r => r.json())
+      .then(response => {
 
-    })
+      })
   }
 
   // completedLessonAPI = function () {
@@ -164,7 +166,6 @@ setCategories()
 
   userCompletedLessons = (resp) => {
     const completedLessons = resp.filter(Done => {
-      console.log(Done)
       return Done.end !== null
     })
     return completedLessons
@@ -192,40 +193,47 @@ setCategories()
 
   }
 
+  renderUserInformation = () => {
+    return fetch(`http://127.0.0.1:8088/users/${this.state.activeUser}`)
+    .then(r => r.json()
+      .then(response => {
+        this.setState({
+          image: response.image,
+          email: response.email
+        })
+        // Fetch that sets all lessons from library and checks against which lessons are mandatory
+        return fetch(`http://127.0.0.1:8088/libraries?&_expand=category`)
+          .then(r => r.json()
+            .then(allLibraryAndCategories => {
+              const categoriesIds = []
+              const categories = []
+              allLibraryAndCategories.map(oneCategory => {
+                if (categoriesIds.indexOf(oneCategory.category.id) === -1) {
+                  categoriesIds.push(oneCategory.category.id)
+                  categories.push(oneCategory.category)
+                }
+              })
+              const mandatoryLessons = this.mandatoryLessons(allLibraryAndCategories)
+              this.setState({
+                allLessons: allLibraryAndCategories,
+                needToComplete: mandatoryLessons,
+                categories: categories
+              })
+              // Fetch that checks which lessons the activeUser is currently working on and setting to inProgress
+              this.getUserHistory()
+            })
+          )
+      })
+    )
+  }
 
   // Fetch sets current user email and image
   componentDidMount() {
-    return fetch(`http://127.0.0.1:8088/users/${this.state.activeUser}`)
-      .then(r => r.json()
-        .then(response => {
-          this.setState({
-            image: response.image,
-            email: response.email
-          })
-          // Fetch that sets all lessons from library and checks against which lessons are mandatory
-          return fetch(`http://127.0.0.1:8088/libraries?&_expand=category`)
-            .then(r => r.json()
-              .then(allLibraryAndCategories => {
-                const categoriesIds = []
-                const categories = []
-                allLibraryAndCategories.map(oneCategory => {
-                    if (categoriesIds.indexOf(oneCategory.category.id) === -1 ) {
-                      categoriesIds.push(oneCategory.category.id)
-                      categories.push(oneCategory.category)
-                    }
-                })
-                const mandatoryLessons = this.mandatoryLessons(allLibraryAndCategories)
-                this.setState({
-                  allLessons: allLibraryAndCategories,
-                  needToComplete: mandatoryLessons,
-                  categories: categories
-                })
-                // Fetch that checks which lessons the activeUser is currently working on and setting to inProgress
-                this.getUserHistory()
-              })
-            )
-        })
-      )
+    if (!this.state.activeUser) {
+    } else {
+      this.renderUserInformation()
+
+    }
   }
   setActiveUser = (val) => {
     if (val) {
@@ -265,7 +273,7 @@ setCategories()
 
 
   View = () => {
-    if (sessionStorage.getItem("userId") === null) {
+    if (this.state.activeUser === null) {
       return <Login
         showview={this.showview}
         setActiveUser={this.setActiveUser} />
@@ -342,6 +350,7 @@ setCategories()
           image={this.state.image} />
         <Container>
           <Status
+            activeUser={this.state.activeUser}
             showview={this.showview}
             inProgressNum={this.state.inProgress.length}
             completedNum={this.state.completed.length}

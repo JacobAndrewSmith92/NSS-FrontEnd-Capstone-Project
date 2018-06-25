@@ -1,35 +1,48 @@
 import React, { Component } from 'react';
 import logo from '../logo.svg'
+import loginScreenLogo from '../loginScreen.svg';
 import { Field, Label, Control, Input, Button } from 'bloomer';
-// import $ from 'jquery'
+import $ from 'jquery'
+import './login.css';
 
 export default class Login extends Component {
-    state = {
-        email: "",
-        password: ""
-    }
+
     // Update state whenever an input field is edited
-    handleChange = function (evt) {
+    handleChange = (evt) => {
         const stateToChange = {}
         stateToChange[evt.target.id] = evt.target.value
         this.setState(stateToChange)
-    }.bind(this)
+    }
 
     // Handle for login submit
-    handleLogin = function (e) {
+    handleLogin = (e) => {
         e.preventDefault()
 
-        // Determine if a user already exists in API
-        fetch(`http://127.0.0.1:8088/users?email=${this.state.email}`)
-            .then(r => r.json())
-            .then(user => {
-                // User exists. Set local storage, and show home view
-                if (user.length) {
-                    this.props.setActiveUser(user[0].id)
-                    this.props.showview("home")
 
-                // User doesn't exist
+
+        // Determine if a user already exists in API
+        fetch(`http://127.0.0.1:8088/users`)
+            .then(r => r.json())
+            .then(users => {
+                let userFound = false
+                users.map(user => {
+                    // User doesn't exist
+                    if ((user.email !== $(`#user__email`).val() || user.email === "") && (user.password === $(`#user__password`).val() || user.password === "")) {
+                        // User exists
+                    } else if (user.email === $(`#user__email`).val() && user.password === $(`#user__password`).val()) {
+                        userFound = true
+                        this.props.setActiveUser(user.id)
+                        this.props.showview("home")
+
+                    }
+
+                })
+                if (userFound === false) {
+                    alert("Incorrect email or password")
                 }
+
+
+                // User exists. Set local storage, and show home view
                 // else {
                 //     // Create user in API
                 //     fetch("http://127.0.0.1:8088/users", {
@@ -48,13 +61,12 @@ export default class Login extends Component {
                 // }
 
             })
-    }.bind(this)
+    }
 
     render() {
         return (
-            <div>
-                <img src={logo} className="App-logo" alt="logo"/>
-                <form onSubmit={this.handleLogin}>
+            <div className="login__Page login__Logo">
+                <form onSubmit={this.handleLogin} className="login__Item">
                 <Field>
                     <Label>Email</Label>
                     <Input type="text" id="user__email" onChange={this.handleChange} required="" placeholder='Email' autoFocus=""/>

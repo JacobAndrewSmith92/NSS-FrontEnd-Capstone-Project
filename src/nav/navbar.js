@@ -43,12 +43,12 @@ export default class NavBar extends Component {
     render() {
         if (this.props.activeUser !== null){
             return (
+            <div className="nav__bar">
                 <div>
-                <Navbar className="nav__bar">
+                <Navbar >
                     <NavbarBrand>
                         <img src={logo} className="App-logo" alt="logo"/>
                         <NavbarItem className="nav__pointer" onClick={() => this.props.showview("home")}>Home</NavbarItem>
-                        {/* <NavbarBurger isActive={this.state.isActive} onClick={this.props.showview} /> */}
                     </NavbarBrand>
                     <NavbarMenu isActive={this.state.isActive}>
                         <NavbarItem id="nav__profile" className="nav__pointer" onClick={() => this.props.showview("profile")}> <Image isSize="32x32" src={this.props.image}/>Profile</NavbarItem>
@@ -59,18 +59,11 @@ export default class NavBar extends Component {
                     <NavbarItem id="nav__logout" className="nav__pointer" onClick={() => this.props.showview("logout")}>Logout</NavbarItem>
                 </Navbar>
                 </div>
+            </div>
             )
         } else {
             return(
-                <Navbar>
-                    <NavbarBrand>
-                        <NavbarItem>Train Up</NavbarItem>
-                        {/* <NavbarBurger isActive={this.state.isActive} onClick={this.onClickNav} /> */}
-                        <NavbarItem>
-                            {/* <Login setActiveUser={this.props.setActiveUser} setView={this.props.setView}/> */}
-                        </NavbarItem>
-                    </NavbarBrand>
-                </Navbar>
+                null
             )
         }
 

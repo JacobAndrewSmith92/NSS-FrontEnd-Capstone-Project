@@ -16,7 +16,7 @@ export default class ContactCard extends Component {
                             <p>
                                 <strong>{this.props.firstName} {this.props.lastName}</strong>
                                 <br />
-                                {this.props.email}
+                                <a href={"mailto:" + this.props.email + "?subject=Hello Friend!"}>{this.props.email}</a>
                             </p>
                         </Content>
                         <Level isMobile>
