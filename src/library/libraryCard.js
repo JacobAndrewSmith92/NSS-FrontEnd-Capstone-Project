@@ -6,9 +6,16 @@ export default class LessonCard extends Component {
 
 
 // Function that checks whether or not the boolean value is true or false based on whether the user has started a lesson or not.
+resumeLessonId = (evt) => {
+    const id = evt.target.id
+    this.props.resumeLesson(id)
+}
+
+
+
     hasStarted = function (bool) {
         if (bool) {
-            return <Button onClick={this.props.lessonMethod} id={this.props.id}>Resume Lesson</Button>
+            return <Button onClick={this.resumeLessonId} id={this.props.id}>Resume Lesson</Button>
 
         } else {
             return <Button onClick={this.props.lessonMethod} id={this.props.id}>Start Lesson</Button>

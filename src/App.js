@@ -13,6 +13,10 @@ import Needed from './home/needed';
 import InProgress from './home/inProgress';
 import Completed from './home/completed';
 import { Container } from 'bloomer';
+import ArrayManager from './Managers/ArrayManager';
+import UserManager from './Managers/UserManager';
+
+
 class App extends Component {
   state = {
     activeUser: sessionStorage.getItem("userId"),
@@ -30,10 +34,18 @@ class App extends Component {
     errorMessage: "Your email or password is incorrect"
   }
 
+  // Importing manager functions
+
+  startedMandatoryLesson = ArrayManager.startedMandatoryLesson.bind(this)
+  clearActiveUser = UserManager.clearActiveUser.bind(this)
+
+
+
   // Method that grabs the event target id from the Button and stores it as id and passes it to a function called displayLesson
 
   lessonMethod = function (evt) {
     const id = evt.target.id
+    this.startedMandatoryLesson(id)
     console.log(id)
     fetch(`http://127.0.0.1:8088/userLibrary`, {
       method: "POST",
@@ -49,7 +61,7 @@ class App extends Component {
     })
       .then(r => r.json())
       .then(response => {
-        this.displayLesson(response.libraryId)
+        this.resumeLesson(response.id)
       })
 
   }.bind(this)
@@ -67,31 +79,46 @@ class App extends Component {
       })
   }
 
-  setCategories() { console.log(this.state.categories) }
-  displayLesson = (id) => {
-    // id is suppose to be the user history id
-    fetch(`http://127.0.0.1:8088/userLibrary/${id}?_expand=library`)
-      .then(r => r.json())
-      .then(userLessonHistory => {
-        console.log(userLessonHistory)
-        const newstartedLessons = []
-        const inProgressArray = this.state.inProgress
-        inProgressArray.map(lesson => {
-          console.log("InProgress Lessons:", lesson)
-          console.log("User Intersection Library", userLessonHistory)
-          if (lesson.library.id !== userLessonHistory.library.id) {
-            newstartedLessons.push(userLessonHistory.library)
-          }
-        })
-        inProgressArray.push(newstartedLessons)
-        this.setState({
-          inProgress: inProgressArray,
-          currentLesson: userLessonHistory.library,
-          currentLessonId: userLessonHistory.id
-        })
-        this.showview("lesson")
-      })
-  }
+
+  // displayLesson = (id) => {
+  //   // id is suppose to be the user history id
+  //   fetch(`http://127.0.0.1:8088/userLibrary/${id}?_expand=library`)
+  //     .then(r => r.json())
+  //     .then(userLessonHistory => {
+  //       console.log(userLessonHistory)
+  //       const newstartedLessons = []
+  //       const inProgressArray = this.state.inProgress
+  //       inProgressArray.map(lesson => {
+  //         console.log("InProgress Lessons:", lesson)
+  //         console.log("User Intersection Library", userLessonHistory)
+  //         if (lesson.library.id === userLessonHistory.library.id) {
+
+  //           newstartedLessons.push(userLessonHistory.library)
+  //         }
+  //       })
+  //       inProgressArray.push(newstartedLessons)
+  //       this.setState({
+  //         // inProgress: inProgressArray,
+  //         currentLesson: userLessonHistory.library,
+  //         currentLessonId: userLessonHistory.id
+  //       })
+  //       this.showview("lesson")
+  //     })
+  // }
+
+resumeLesson = (id) => {
+  console.log(id)
+  fetch(`http://127.0.0.1:8088/userLibrary/${id}?_expand=library`)
+  .then(r => r.json())
+  .then(resumingLesson => {
+    this.setState({
+      currentLesson: resumingLesson.library
+    })
+    this.showview("lesson")
+  })
+
+}
+
   /*
   1. When user clicks on the start lesson button they are re-routed to the lessons/in progress component.
   2. A fetch is requested to post to the API with moving the lesson to in progress
@@ -127,12 +154,7 @@ class App extends Component {
       })
   }
 
-  // completedLessonAPI = function () {
-  //   const completedLesson = {
-  //     "userId": this.state.activeUser,
-  //     libraryId: "",
-  //   }
-  // }
+
 
   finishedBtnLesson = function (e) {
 
@@ -203,7 +225,7 @@ class App extends Component {
         })
         // Fetch that sets all lessons from library and checks against which lessons are mandatory
         return fetch(`http://127.0.0.1:8088/libraries?&_expand=category`)
-          .then(r => r.json()
+          .then(r => r.json())
             .then(allLibraryAndCategories => {
               const categoriesIds = []
               const categories = []
@@ -214,6 +236,7 @@ class App extends Component {
                 }
               })
               const mandatoryLessons = this.mandatoryLessons(allLibraryAndCategories)
+              // const filteredMandatoryLessons = mandatoryLessons.filter()
               this.setState({
                 allLessons: allLibraryAndCategories,
                 needToComplete: mandatoryLessons,
@@ -222,7 +245,7 @@ class App extends Component {
               // Fetch that checks which lessons the activeUser is currently working on and setting to inProgress
               this.getUserHistory()
             })
-          )
+
       })
     )
   }
@@ -261,6 +284,7 @@ class App extends Component {
     // If user clicked logout in nav, empty local storage and update activeUser state
     if (view === "logout") {
       this.setActiveUser(null)
+      this.clearActiveUser()
     }
 
     // Update state to correct view will be rendered
@@ -282,7 +306,8 @@ class App extends Component {
         case "logout":
           return <Login
             showview={this.showview}
-            setActiveUser={this.setActiveUser} />
+            setActiveUser={this.setActiveUser}
+            renderUserInformation={this.renderUserInformation} />
         case "profile":
           return <Profile
             showview={this.showview} />
@@ -300,6 +325,7 @@ class App extends Component {
             inProgress={this.state.inProgress}
             displayLesson={this.displayLesson}
             lessonMethod={this.lessonMethod}
+            resumeLesson={this.resumeLesson}
           />
         case "completed":
           return <Completed
@@ -310,6 +336,8 @@ class App extends Component {
         case "needed":
           return <Needed
             showview={this.showview}
+            allLessons={this.state.allLessons}
+            categories={this.state.categories}
             needToComplete={this.state.needToComplete}
             displayLesson={this.displayLesson}
             lessonMethod={this.lessonMethod}
