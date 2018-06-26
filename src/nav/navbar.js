@@ -40,6 +40,7 @@ export default class NavBar extends Component {
         this.setState(stateToChange)
     }
 
+
     render() {
         if (this.props.activeUser !== null){
             return (

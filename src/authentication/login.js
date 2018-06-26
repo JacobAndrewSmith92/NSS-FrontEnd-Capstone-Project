@@ -33,6 +33,8 @@ export default class Login extends Component {
                         userFound = true
                         this.props.setActiveUser(user.id)
                         this.props.showview("home")
+                        this.props.renderUserInformation()
+
 
                     }
 
