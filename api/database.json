@@ -675,7 +675,6 @@
       "roleId": "1",
       "image": "https://www.w3schools.com/w3images/avatar2.png"
     }
-
   ],
   "libraries": [
     {
@@ -904,7 +903,7 @@
     {
       "id": "1",
       "question": "To be called a 'Scotch', whisky must, of course, be made in Scotland. Which of the following is one other requirement of a Scotch?",
-      "answer": "Aged for three years and a day",
+      "answer": "3 Years 1 Day",
       "quizId": "2"
     },
     {
@@ -951,108 +950,38 @@
     },
     {
       "id": "9",
-      "question": "Single Malt Scotch is, by definition, of superior quality to Blended Scotch.",
+      "question": "Single Malt Scotch is, by definition, of superior quality to Blended Scotch, True or False?",
       "answer": "False",
       "quizId": "2"
     },
     {
       "id": "10",
-      "question": "This spirit is made from distilling wine and then aging it in oak barrels. During the aging process, water vapor is lost and fungus feeds on the alcohol, producing a stronger, wine-like spirit. Two famous varieties of this spirit are cognac and armagnac",
+      "question": "This spirit is made from distilling wine and then aging it in oak barrels. During the aging process, water vapor is lost and fungus feeds on the alcohol, producing a stronger, wine-like spirit. Two famous varieties of this spirit are cognac and armagnac.",
       "answer": "Brandy",
       "quizId": "2"
     }
   ],
   "userLibrary": [
     {
-      "id": "1",
-      "userId": "5b19c6c41b6e3acab61bc7ac",
-      "libraryId": "5b19cbd6b8ac305b7acd822c",
-      "start": "1528471864500",
-      "end": null
-    },
-    {
-      "id": "2",
-      "userId": "5b19c6c43597e726bf2bfeab",
-      "libraryId": "5b19cbd648445e59cbd35a1d",
-      "start": "1528471864500",
-      "end": "1528502345636"
-    },
-    {
-      "id": "3",
-      "userId": "5b19c6c41b6e3acab61bc7ac",
-      "libraryId": "5b19cbd60e139b35da1fd8ac",
-      "start": "1528471864500",
-      "end": "1528472104015"
-    },
-    {
-      "id": "4",
-      "userId": "5b19c6c41b6e3acab61bc7ac",
-      "libraryId": "5b19cbd6b8ac305b7acd822c",
-      "start": "1528471864500",
-      "end": null
-    },
-    {
-      "id": "5",
-      "userId": "5b19c6c402fac3ab5e4438f3",
-      "libraryId": "5b19cbd6b8ac305b7acd822c",
-      "start": "1528471863470",
-      "end": null
-    },
-    {
-      "id": "6",
-      "userId": "5b19c6c4771bfb74e4e6aaae",
-      "libraryId": "5b19cbd65acc320874f469b8",
-      "start": "1528471864500",
-      "end": "1528472061613"
-    },
-    {
       "userId": "5b19c6c4243ff1e2201f9265",
       "libraryId": "5b19cbd60e139b35da1fd8ac",
-      "start": 1529090319232,
+      "start": 1530211225166,
       "end": null,
-      "id": "5OnOxy0"
-    },
-    {
-      "userId": "5b19c6c4243ff1e2201f9265",
-      "libraryId": "5b19cbd6e18740a827996b69",
-      "start": 1529090325362,
-      "end": null,
-      "id": "CUrMXO~"
-    },
-    {
-      "userId": "5b19c6c4243ff1e2201f9265",
-      "libraryId": "5b19cbd648445e59cbd35a1d",
-      "start": 1529091107967,
-      "end": null,
-      "id": "SYbP1hl"
-    },
-    {
-      "userId": "5b19c6c4243ff1e2201f9265",
-      "libraryId": "5b19cbd690a3911f2181d9dc",
-      "start": 1529091123345,
-      "end": null,
-      "id": "DdvSMtR"
-    },
-    {
-      "userId": "5b19c6c4243ff1e2201f9265",
-      "libraryId": "5b19cbd65548bc5b687603d6",
-      "start": 1529204943097,
-      "end": null,
-      "id": "XuWWGkG"
+      "id": 1
     },
     {
       "userId": "5b19c6c4243ff1e2201f9265",
       "libraryId": "5b19cbd661a25f8440075a57",
-      "start": 1529204996261,
+      "start": 1530211229729,
       "end": null,
-      "id": "0UTFd7f"
+      "id": 2
     },
     {
       "userId": "5b19c6c4243ff1e2201f9265",
-      "libraryId": "5b19cbd6460231c2754f0345",
-      "start": 1529333961668,
-      "end": null,
-      "id": "bndqsXD"
+      "libraryId": "5b19cbd6e18740a827996b69",
+      "start": 1530211235004,
+      "end": 1530211252439,
+      "id": 3
     }
   ],
   "trainerEmployee": [

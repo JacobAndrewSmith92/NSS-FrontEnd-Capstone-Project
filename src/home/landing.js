@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Title, HeroBody, Container } from 'bloomer';
 import Slogan from '../Slogan.png';
 import '../library/libraryList.css';
+import './home.css';
 export default class Landing extends Component {
 
     render() {
@@ -9,7 +10,7 @@ export default class Landing extends Component {
             <div>
                 <HeroBody>
                     <Container hasTextAlign='centered'>
-                            <Title isSize={1}>Welcome to Train Up</Title>
+                            <Title isSize={1} className="welcome">Welcome to Train Up</Title>
                         <div className="flexbox__Cards">
                             <img className="image__home" src={Slogan} alt="Slogan"/>
                         </div>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from '../logo.svg'
 import loginScreenLogo from '../loginScreen.svg';
-import { Field, Label, Control, Input, Button } from 'bloomer';
+import { Field, Label, Control, Input, Button, Modal, ModalBackground, ModalContent, Title} from 'bloomer';
 import $ from 'jquery'
 import './login.css';
 
@@ -67,21 +67,30 @@ export default class Login extends Component {
 
     render() {
         return (
-            <div className="login__Page login__Logo">
-                <form onSubmit={this.handleLogin} className="login__Item">
-                <Field>
-                    <Label>Email</Label>
-                    <Input type="text" id="user__email" onChange={this.handleChange} required="" placeholder='Email' autoFocus=""/>
-                    <Label>Password</Label>
-                    <Input type="password" id="user__password" onChange={this.handleChange} required="" placeholder='Password'/>
-                </Field>
-                <Field isGrouped>
-                    <Control>
-                        <Button type="submit">Submit</Button>
-                    </Control>
-                </Field>
-                </form>
-            </div>
+
+            <Modal isActive isDisplay="flex" className="background">
+                <ModalBackground />
+                <ModalContent>
+                    <div className="login__Page login__Logo">
+                    <div>
+                    <Title hasTextAlign="centered" className="login__Title" isSize={1}>Train Up!</Title>
+                    </div>
+                        <form onSubmit={this.handleLogin} className="login__Item">
+                            <Field>
+                                <Label >Email</Label>
+                                <Input type="text" id="user__email" onChange={this.handleChange} required="" placeholder='Email' autoFocus="" />
+                                <Label >Password</Label>
+                                <Input type="password" id="user__password" onChange={this.handleChange} required="" placeholder='Password' />
+                            </Field>
+                            <Field isGrouped>
+                                <Control>
+                                    <Button  type="submit">Submit</Button>
+                                </Control>
+                            </Field>
+                        </form>
+                    </div>
+                </ModalContent>
+            </Modal>
         )
     }
 }

@@ -10,7 +10,6 @@ render() {
         {this.props.inProgress.map(progress => {
             let categoryTitleImage = ""
             this.props.categories.forEach(category => {
-
                 if (category.id === progress.library.categoryId ) {
                 return categoryTitleImage = category
                 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Button } from 'bloomer';
+import Quiz from '../quiz/quizzes';
+import { Button, Title } from 'bloomer';
 
 export default class Lesson extends Component {
 
@@ -19,6 +20,7 @@ export default class Lesson extends Component {
 
     grabId = function (evt) {
         const id = evt.target.id
+        this.props.completedUserLessons(id)
         fetch(`http://127.0.0.1:8088/userLibrary/${id}`, {
             method: "PATCH",
             headers: {
@@ -31,17 +33,34 @@ export default class Lesson extends Component {
             .then(() => {
                 this.props.getUserHistory()
             })
+        this.props.showview("home")
     }.bind(this)
+
+
 
 
     render() {
         return (
             <div>
-                <h1>Lesson: {this.props.lesson.title}</h1>
-                <p>{this.props.lesson.content}</p>
+                <div>
+                    <Title>{this.props.lesson.title}</Title>
+                    <p>{this.props.lesson.content}</p>
+                </div>
+                <div >
+
+                    {this.props.quizzes.map(quiz => {
+                        return (<Quiz
+                        key={quiz.id}
+                        id={quiz.id}
+                        question={quiz.question}
+                        questionNum={quiz.id}
+                        answer={quiz.answer}/>)
+                        })}
+                </div>
                 <Button onClick={this.grabId} id={this.props.id}>Finished</Button>
                 <Button id={this.props.id} onClick={() => this.props.showview("library")}>All Lessons</Button>
             </div>
+
         )
     }
 }

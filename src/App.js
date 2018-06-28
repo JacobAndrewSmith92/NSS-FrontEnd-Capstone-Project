@@ -31,12 +31,14 @@ class App extends Component {
     needToComplete: [],
     completed: [],
     categories: [],
+    allQuizzes: [],
     errorMessage: "Your email or password is incorrect"
   }
 
   // Importing manager functions
 
   startedMandatoryLesson = ArrayManager.startedMandatoryLesson.bind(this)
+  completedUserLessons = ArrayManager.completedUserLessons.bind(this)
   clearActiveUser = UserManager.clearActiveUser.bind(this)
 
 
@@ -66,17 +68,31 @@ class App extends Component {
 
   }.bind(this)
 
+// Function that grabs all categories from API
+// This function is called inside the componentDidMount
 
   setCategories = () => {
     fetch(`http://127.0.0.1:8088/categories`)
       .then(r => r.json())
-      .then(response => {
-        console.log(response)
+      .then(allCategories => {
         this.setState({
-          categories: response
+          categories: allCategories
         })
 
       })
+  }
+
+// Function that grabs all quizzes from API
+// This function is called inside the componentDidMount
+
+  grabQuizzes = () => {
+    fetch(`http://127.0.0.1:8088/quizzes`)
+    .then(r => r.json())
+    .then(allQuizzesFetch => {
+      this.setState({
+        allQuizzes: allQuizzesFetch
+      })
+    })
   }
 
 
@@ -106,13 +122,17 @@ class App extends Component {
   //     })
   // }
 
+// resumeLesson that sets the State of currentLesson with the API "posted" response id
+// This function is called inside lessonMethod
+
 resumeLesson = (id) => {
   console.log(id)
   fetch(`http://127.0.0.1:8088/userLibrary/${id}?_expand=library`)
   .then(r => r.json())
   .then(resumingLesson => {
     this.setState({
-      currentLesson: resumingLesson.library
+      currentLesson: resumingLesson.library,
+      currentLessonId: id
     })
     this.showview("lesson")
   })
@@ -204,6 +224,7 @@ resumeLesson = (id) => {
           userLessons.map(singleUserLesson => {
             if (singleUserLesson.userId === userId && singleUserLesson.libraryId === singleLesson.id) {
               inProgressLessons.push(singleUserLesson)
+
             }
           })
         })
@@ -226,7 +247,7 @@ resumeLesson = (id) => {
         // Fetch that sets all lessons from library and checks against which lessons are mandatory
         return fetch(`http://127.0.0.1:8088/libraries?&_expand=category`)
           .then(r => r.json())
-            .then(allLibraryAndCategories => {
+          .then(allLibraryAndCategories => {
               const categoriesIds = []
               const categories = []
               allLibraryAndCategories.map(oneCategory => {
@@ -236,11 +257,12 @@ resumeLesson = (id) => {
                 }
               })
               const mandatoryLessons = this.mandatoryLessons(allLibraryAndCategories)
+              this.setCategories()
+              this.grabQuizzes()
               // const filteredMandatoryLessons = mandatoryLessons.filter()
               this.setState({
                 allLessons: allLibraryAndCategories,
-                needToComplete: mandatoryLessons,
-                categories: categories
+                needToComplete: mandatoryLessons
               })
               // Fetch that checks which lessons the activeUser is currently working on and setting to inProgress
               this.getUserHistory()
@@ -300,7 +322,8 @@ resumeLesson = (id) => {
     if (this.state.activeUser === null) {
       return <Login
         showview={this.showview}
-        setActiveUser={this.setActiveUser} />
+        setActiveUser={this.setActiveUser}
+        renderUserInformation={this.renderUserInformation} />
     } else {
       switch (this.state.currentView) {
         case "logout":
@@ -345,6 +368,7 @@ resumeLesson = (id) => {
         case "lesson":
           return <Lesson
             activeUser={this.state.activeUser}
+            completedUserLessons={this.completedUserLessons}
             getUserHistory={this.getUserHistory}
             id={this.state.currentLessonId}
             key={this.state.currentLesson.id}
@@ -352,7 +376,8 @@ resumeLesson = (id) => {
             finishedBtnLesson={this.finishedBtnLesson}
             completedLessonAPI={this.completedLessonAPI}
             showview={this.showview}
-            lesson={this.state.currentLesson} />
+            lesson={this.state.currentLesson}
+            quizzes={this.state.allQuizzes}/>
         case "community":
           return <Community
             showview={this.showview} />
