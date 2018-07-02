@@ -23,6 +23,7 @@ class App extends Component {
     email: "",
     password: "",
     currentView: "",
+    name: "",
     image: "",
     currentLesson: "",
     currentLessonId: "",
@@ -48,7 +49,6 @@ class App extends Component {
   lessonMethod = function (evt) {
     const id = evt.target.id
     this.startedMandatoryLesson(id)
-    console.log(id)
     fetch(`http://127.0.0.1:8088/userLibrary`, {
       method: "POST",
       headers: {
@@ -63,7 +63,24 @@ class App extends Component {
     })
       .then(r => r.json())
       .then(response => {
-        this.resumeLesson(response.id)
+        console.log("response back:", response)
+        // fetch(`http://127.0.0.1:8088/userLibrary/${response.id}?_expand=library`)
+        // .then(r => r.json())
+        // .then(response => {
+
+          this.resumeLesson(response.id)
+          // this.renderUserInformation()
+          fetch(`http://127.0.0.1:8088/userLibrary/${response.id}?&_expand=library`)
+          .then(r => r.json())
+          .then(lesson => {
+            const inprogressLessons = this.state.inProgress.map(item => Object.assign({}, item))
+            inprogressLessons.push(lesson)
+            this.setState({
+              inProgress: inprogressLessons
+            })
+          })
+
+        // })
       })
 
   }.bind(this)
@@ -126,7 +143,7 @@ class App extends Component {
 // This function is called inside lessonMethod
 
 resumeLesson = (id) => {
-  console.log(id)
+  console.log("Resume Lesson Id", id)
   fetch(`http://127.0.0.1:8088/userLibrary/${id}?_expand=library`)
   .then(r => r.json())
   .then(resumingLesson => {
@@ -176,24 +193,24 @@ resumeLesson = (id) => {
 
 
 
-  finishedBtnLesson = function (e) {
+  // finishedBtnLesson = function (e) {
 
-    const oldInProgressState = this.state.inProgress.map(item => Object.assign({}, item))
-    const lessonIndex = this.state.inProgress.findIndex(lesson => lesson.id === e)
-    const lesson = oldInProgressState.splice(lessonIndex, 1)
-    const lessonObject = lesson[0]
-    console.log(lessonObject)
-    const objectToPush = {
-      library: lessonObject
-    }
-    const oldCompletedLessonsState = this.state.completed.map(item => Object.assign({}, item))
-    oldCompletedLessonsState.push(objectToPush)
-    this.setState({
-      inProgress: oldInProgressState,
-      completed: oldCompletedLessonsState
+  //   const oldInProgressState = this.state.inProgress.map(item => Object.assign({}, item))
+  //   const lessonIndex = this.state.inProgress.findIndex(lesson => lesson.id === e)
+  //   const lesson = oldInProgressState.splice(lessonIndex, 1)
+  //   const lessonObject = lesson[0]
+  //   console.log(lessonObject)
+  //   const objectToPush = {
+  //     library: lessonObject
+  //   }
+  //   const oldCompletedLessonsState = this.state.completed.map(item => Object.assign({}, item))
+  //   oldCompletedLessonsState.push(objectToPush)
+  //   this.setState({
+  //     inProgress: oldInProgressState,
+  //     completed: oldCompletedLessonsState
 
-    })
-  }.bind(this)
+  //   })
+  // }.bind(this)
 
 
 
@@ -217,6 +234,8 @@ resumeLesson = (id) => {
     fetch(`http://127.0.0.1:8088/userLibrary?&_expand=library`)
       .then(r => r.json())
       .then(userLessons => {
+        console.log("User Lessons:", userLessons)
+        console.log("All Lessons:", this.state.allLessons)
         const userId = this.state.activeUser
         const completed = this.userCompletedLessons(userLessons)
         const inProgressLessons = []
@@ -242,6 +261,7 @@ resumeLesson = (id) => {
       .then(response => {
         this.setState({
           image: response.image,
+          name: response.firstName + " " + response.lastName,
           email: response.email
         })
         // Fetch that sets all lessons from library and checks against which lessons are mandatory
@@ -333,7 +353,10 @@ resumeLesson = (id) => {
             renderUserInformation={this.renderUserInformation} />
         case "profile":
           return <Profile
-            showview={this.showview} />
+            showview={this.showview}
+            name={this.state.name}
+            image={this.state.image}
+            />
         case "library":
           return <Library
             displayLesson={this.displayLesson}

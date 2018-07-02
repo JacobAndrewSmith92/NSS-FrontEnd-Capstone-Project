@@ -13,7 +13,8 @@ export default class Needed extends Component {
                     key={needed.id}
                     displayLesson={this.props.displayLesson}
                     lessonMethod={this.props.lessonMethod}
-                    id={needed.id} title={needed.title}
+                    id={needed.id}
+                    title={needed.title}
                     category={needed.category.title}
                     image={needed.category.image} content={needed.content}
                     showview={this.props.showview}
