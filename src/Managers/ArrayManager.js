@@ -1,6 +1,3 @@
-import $ from 'jquery';
-
-
 const ArrayManager = Object.create(null, {
     startedMandatoryLesson: {
         value: function (id) {
@@ -12,11 +9,14 @@ const ArrayManager = Object.create(null, {
                 // Add spliced item to in Progress array in state
                 // If no item is found findIndex returns a -1
                 const lessonToBeMoved = oldNeedToCompleteState.splice(indexedLesson, 1)
+                        // fetch(`http://127.0.0.1:8088/userLibrary/${response.id}?_expand=library`)
+        // .then(r => r.json())
+        // .then(response => {// })
                 const oldInProgressState = this.state.inProgress.map(item => Object.assign({}, item))
-                oldInProgressState.push(lessonToBeMoved)
+                oldInProgressState.push(lessonToBeMoved[0])
                 this.setState({
-                    needToComplete: oldNeedToCompleteState,
-                    inProgress: oldInProgressState
+                    needToComplete: oldNeedToCompleteState
+                    // inProgress: oldInProgressState
                 })
             } else {
 
@@ -67,8 +67,9 @@ const ArrayManager = Object.create(null, {
     },
     completedUserLessons: {
         value: function (id) {
+            debugger
             let oldInProgressState = this.state.inProgress.map(item => Object.assign({}, item))
-            let indexedLesson = oldInProgressState.findIndex(lesson => lesson.id === id)
+            let indexedLesson = oldInProgressState.findIndex(lesson => lesson.id === parseInt(id))
             if (indexedLesson > -1 ) {
                 const lessonToBeMoved = oldInProgressState.splice(indexedLesson, 1)
                 const oldCompletedState = this.state.completed.map(item => Object.assign({}, item))
@@ -78,7 +79,7 @@ const ArrayManager = Object.create(null, {
                     inProgress: oldInProgressState,
                     completed: oldCompletedState
                 })
-            } 
+            }
         }
     }
 })

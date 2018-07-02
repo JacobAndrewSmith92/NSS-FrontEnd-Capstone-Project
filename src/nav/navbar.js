@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // Using bloomer tags to import bulma styling
-import { Navbar, NavbarItem, NavbarBrand, NavbarMenu, Image } from 'bloomer';
+import { Navbar, NavbarItem, NavbarBrand, NavbarMenu, Image, Title, Container } from 'bloomer';
 import 'bulma/css/bulma.min.css';
 // import Login from '../authentication/login';
 import logo from '../logo.svg';
@@ -46,9 +46,10 @@ export default class NavBar extends Component {
             return (
             <div className="nav__bar">
                 <div>
+            <Container>
                 <Navbar >
                     <NavbarBrand>
-                        <img src={logo} className="App-logo" alt="logo"/>
+                        <Title isSize={4} className="navbar__title">Train Up</Title>
                         <NavbarItem className="nav__pointer" onClick={() => this.props.showview("home")}>Home</NavbarItem>
                     </NavbarBrand>
                     <NavbarMenu isActive={this.state.isActive}>
@@ -59,6 +60,7 @@ export default class NavBar extends Component {
                     </NavbarMenu>
                     <NavbarItem id="nav__logout" className="nav__pointer" onClick={() => this.props.showview("logout")}>Logout</NavbarItem>
                 </Navbar>
+                </Container>
                 </div>
             </div>
             )
