@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg'
-import loginScreenLogo from '../loginScreen.svg';
+// import logo from '../logo.svg'
+// import loginScreenLogo from '../loginScreen.svg';
 import { Field, Label, Control, Input, Button, Modal, ModalBackground, ModalContent, Title} from 'bloomer';
 import $ from 'jquery'
 import './login.css';

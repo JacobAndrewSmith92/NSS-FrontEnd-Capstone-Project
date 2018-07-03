@@ -1,5 +1,3 @@
-import $ from 'jquery';
-
 const UserManager = Object.create(null, {
     clearActiveUser: {
         value: function () {

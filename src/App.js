@@ -234,8 +234,6 @@ resumeLesson = (id) => {
     fetch(`http://127.0.0.1:8088/userLibrary?&_expand=library`)
       .then(r => r.json())
       .then(userLessons => {
-        console.log("User Lessons:", userLessons)
-        console.log("All Lessons:", this.state.allLessons)
         const userId = this.state.activeUser
         const completed = this.userCompletedLessons(userLessons)
         const inProgressLessons = []
@@ -409,7 +407,8 @@ resumeLesson = (id) => {
             showview={this.showview} />
         case "home":
         default:
-          return <Landing />
+          return <Landing
+          name={this.state.name} />
       }
     }
   }

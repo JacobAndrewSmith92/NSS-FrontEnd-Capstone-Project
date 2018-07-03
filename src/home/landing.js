@@ -10,7 +10,7 @@ export default class Landing extends Component {
             <div>
                 <HeroBody>
                     <Container hasTextAlign='centered'>
-                            <Title isSize={1} className="welcome">Welcome to Train Up</Title>
+                            <Title isSize={1} className="welcome">Welcome to Train Up </Title>
                         <div className="flexbox__Cards">
                             <img className="image__home" src={Slogan} alt="Slogan"/>
                         </div>

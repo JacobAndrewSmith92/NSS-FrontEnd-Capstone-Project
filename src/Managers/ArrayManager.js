@@ -52,9 +52,9 @@ const ArrayManager = Object.create(null, {
                 fetch(`http://127.0.0.1:8088/userLibrary?userId=${currentUserId}&_expand=library`)
                 .then(r => r.json())
                 .then(currentUserLesson => {
-                    const allLessonsState = []
-                    const needToCompleteState = []
-                    const inProgressState = []
+                    // const allLessonsState = []
+                    // const needToCompleteState = []
+                    // const inProgressState = []
                     const completedState = []
                     allLessons.forEach(lesson => {
                         if (lesson.end !== null) {
@@ -67,7 +67,6 @@ const ArrayManager = Object.create(null, {
     },
     completedUserLessons: {
         value: function (id) {
-            debugger
             let oldInProgressState = this.state.inProgress.map(item => Object.assign({}, item))
             let indexedLesson = oldInProgressState.findIndex(lesson => lesson.id === parseInt(id))
             if (indexedLesson > -1 ) {

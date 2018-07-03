@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Tabs, TabList, Tab, TabLink, Icon, Container } from 'bloomer';
+import { Tabs, TabList, Tab, TabLink, Icon } from 'bloomer';
 import 'bulma/css/bulma.min.css';
 import '../nav/navbar.css';
 
@@ -16,7 +16,8 @@ export default class Home extends Component {
                             <Tab>
                                 <TabLink>
                                     <Icon isSize='small'><span className='fa fa-image' aria-hidden='true' /></Icon>
-                                    <span onClick={() => this.props.showview("progress")}>In Progress {this.props.inProgressNum}</span>
+                                    <span onClick={() => this.props.showview("progress")}>In Progress </span>
+                                    {/* {this.props.inProgressNum} */}
                                 </TabLink>
                             </Tab>
                             <Tab>

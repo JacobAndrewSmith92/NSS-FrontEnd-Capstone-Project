@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, Container, Title, Column, Columns,  } from 'bloomer';
+import { Image, Title, Column, Columns,  } from 'bloomer';
 import './profile.css';
 import ChartData from './ChartData';
 export default class profilePage extends Component {

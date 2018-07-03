@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { Navbar, NavbarItem, NavbarBrand, NavbarMenu, Image, Title, Container } from 'bloomer';
 import 'bulma/css/bulma.min.css';
 // import Login from '../authentication/login';
-import logo from '../logo.svg';
+// import logo from '../logo.svg';
 import 'bulma/css/bulma.min.css'
 import './navbar.css'
 
