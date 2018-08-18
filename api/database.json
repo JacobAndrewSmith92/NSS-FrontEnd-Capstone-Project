@@ -964,17 +964,10 @@
   "userLibrary": [
     {
       "userId": "5b19c6c4243ff1e2201f9265",
-      "libraryId": "5b19cbd65548bc5b687603d6",
-      "start": 1530635642223,
-      "end": 1530635666542,
-      "id": 1
-    },
-    {
-      "userId": "5b19c6c4243ff1e2201f9265",
       "libraryId": "5b19cbd60e139b35da1fd8ac",
-      "start": 1530635731646,
-      "end": 1530635733973,
-      "id": 2
+      "start": 1534634538167,
+      "end": 1534634572475,
+      "id": 1
     }
   ],
   "trainerEmployee": [
